@@ -1,0 +1,51 @@
+// PRIMARY COLOURS
+$consumer-blue: #00358E
+$corporate-blue: #003C71
+$black: #2D2926
+$gold: #F1C400
+$light-silver: #A7A8AA
+
+// SECONDARY COLOURS
+$sky-blue: #71C5E8
+$magenta: #BC204B
+$green: #009639
+$teal: #00B2A9
+$orange: #FF671F
+$red: #C8102E
+$purple: #8A1B61
+$dark-silver: #75787B
+
+// TYPOGRAPHY
+$line-height: 2
+
+// @font-face
+//     font-family: "MarkOT-ExtraLight"
+//     src: url("../fonts/MarkOT-ExtraLight.otf") format("otf")
+//
+// @font-face
+//     font-family: "MarkOT-Heavy"
+//     src: url("../fonts/MarkOT-Heavy.otf") format("otf")
+
+$markotbook: 'MarkOT-Extralight', sans-serif
+$markotbold: 'MarkOT-Heavy', sans-serif
+
+$mobile-size: em(320)
+$tablet-size: 720px
+$desktop-size: em(960)
+$largedesktop-size: em(1050)
+
+// Bourbon Neat Breakpoints
+$mobile: new-breakpoint(min-width $mobile-size 12)
+$tablet: new-breakpoint(min-width $tablet-size 12)
+$desktop: new-breakpoint(min-width $desktop-size 12)
+$large-desktop: new-breakpoint(min-width $largedesktop-size 12)
+
+// reset omega
+$fg-column: $column
+$fg-gutter: $gutter
+
+@mixin omega-reset($nth)
+    &:nth-child(#{$nth})
+        margin-right: flex-gutter()
+    &:nth-child(#{$nth}+1)
+        clear: none

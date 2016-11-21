@@ -1,0 +1,293 @@
+// layout
+
+.col-2
+    @include span-columns(2)
+
+.col-3
+    @include span-columns(3)
+
+.col-4
+    @include span-columns(4)
+
+.col-5
+    @include span-columns(5)
+
+.col-6
+    @include span-columns(6)
+
+.col-7
+    @include span-columns(7)
+
+.col-8
+    @include span-columns(8)
+
+.col-9
+    @include span-columns(9)
+
+.col-10
+    @include span-columns(10)
+
+.col-11
+    @include span-columns(11)
+
+.col-12
+    @include span-columns(12)
+
+img
+    width: 100%
+
+//
+body
+    margin: 0
+    padding: 0
+    min-height: 100vh
+    min-width: 100vw
+
+// Main
+main
+	z-index: $content-zindex
+    position: relative
+
+nav
+    z-index: 99999999999999
+
+section
+    width: 100%
+    z-index: $section-zindex
+    position: relative
+    min-height: 100vh
+    padding-top: 100px
+.full-height
+    min-height: 100vh
+
+.row
+    width: 100%
+    display: block
+
+.container
+    @include outer-container()
+    @include media($mobile)
+        @include pad(35px)
+
+.aligner
+    display: flex
+    min-height: 100vh
+    align-items: center
+    justify-content: center
+
+.align-columns
+    display: flex
+    min-height: 100vh
+    align-items: center
+    justify-content: center
+    flex-direction: column
+    .container
+        width: 100%
+
+.about
+    .col-12
+        margin-bottom: 50px
+    .col-6
+        @include omega(2n+1)
+        margin-bottom: 4%
+        font-size: 11pt
+        line-height: $line-height
+    a
+        &:link, &:visited
+            color: $light-silver
+            font-weight: 700
+            text-decoration: none
+
+        &:hover, &:active, &:focus
+            color: $gold
+
+.logo-spacing
+    .col-6
+        @include omega(2n)
+        margin-bottom: 2%
+
+.colours
+    width: 100vw
+    min-height: 100vh
+
+.colours-content
+    width: 100%
+
+.colour-list
+    @include display(flex)
+    @include justify-content(center)
+    width: 100%
+    .col-3
+        @include pad(0)
+        @include margin(0)
+
+
+    .modal-trigger
+        font-weight: 600
+        text-transform: uppercase
+        font-size: 10pt
+        width: 100%
+        height: 100%
+        position: relative
+
+        &::before
+            content: "\f058"
+            display: block
+            text-align: center
+            font-family: fontAwesome
+            line-height: 150px
+            font-size: 30pt
+            opacity: 0
+            transition: all ease-in-out 0.3s
+
+    .caption
+        text-align: center
+        width: 100%
+        position: relative
+        padding: 0
+        transition: all ease-in-out 0.4s
+        bottom: 0
+        position: absolute
+        font-family: $markotbold
+        padding: 0 0 10px 0
+
+    .colour
+        width: 150px
+        height: 150px
+        margin: 0
+        padding: 0
+
+        &:hover, &:active, &:focus
+            .modal-trigger
+                cursor: pointer !important
+                &::before
+                    opacity: 1
+            .caption
+                margin-bottom: 5px
+
+.colour-logo-container
+    width: 100%
+    padding: 0 10%
+
+
+.section-padding
+    @include pad(80px 0)
+
+.heading-pad
+    @include pad(30px 0 15px 0)
+
+.container-fullw
+    @include outer-container(100%)
+
+.rings-img
+    max-width: 50%
+
+.fixed
+    position: fixed
+    top: 0
+    width: 100%
+
+section
+    .col-4
+        text-align: left
+        @include omega(3n+1)
+
+.about
+    .col-6
+        @include media($mobile)
+            @include span-columns(12)
+        @include media($tablet)
+            @include span-columns(6)
+            @include omega(2n+1)
+
+.page-title
+    @include media($mobile)
+        margin-bottom: 100px
+    @include media($tablet)
+        margin-bottom: 0
+    @include media($desktop)
+        margin-bottom: 75px
+
+.blueprint
+    .col-4
+        @include media($mobile)
+            @include span-columns(12)
+            margin-bottom: 3%
+        @include media($tablet)
+            @include span-columns(6)
+            @include omega(2n)
+            margin-bottom: 2%
+        @include media($desktop)
+            @include span-columns(4)
+            @include omega-reset(2n)
+            @include omega(3n)
+
+.colours-wrap
+    display: flex
+    width: 100%
+    @include media($mobile)
+        flex-wrap: wrap
+    @include media($tablet)
+        flex-wrap: wrap
+    @include media($desktop)
+        flex-wrap: nowrap
+    li
+        display: inline-flex
+        justify-content: center
+        align-items: center
+        color: #FFFFFF
+        padding: 50px 15px
+        transition: all ease-in-out 0.5s
+        @include media($mobile)
+            width: 100%
+        @include media($tablet)
+            width: 50%
+        @include media($desktop)
+            width: 100%
+
+.colours-wrap.secondary
+    @include media($mobile)
+        width: 100%
+    @include media($tablet)
+        flex-wrap: wrap
+        li
+            width: 50%
+    @include media($desktop)
+        flex-wrap: wrap
+        li
+            width: 25%
+
+.presentation-deck
+    .col-3
+        @include media($mobile)
+            @include span-columns(6)
+            @include omega(2n)
+        @include media($desktop)
+            @include span-columns(3)
+            @include omega-reset(2n)
+            @include omega(4n)
+
+    .col-4
+        @include media($mobile)
+            @include span-columns(12)
+        @include media($tablet)
+            @include span-columns(4)
+
+.img-halfwidth
+    max-width: 50%
+    margin: 0 auto
+    padding: 25px 0
+
+.image-bp
+    .col-3
+        @include omega(4n)
+        margin-bottom: 2%
+
+.dsr
+    color: #FFFFFF
+    text-align: center
+
+
+.legal
+    .col-3
+        @include omega(4n)

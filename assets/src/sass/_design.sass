@@ -1,0 +1,196 @@
+.home, .knowcineplex
+    text-align: center
+    flex-direction: column
+    .logo
+        width: 100%
+        @include media($mobile)
+            max-width: 400px
+            @include pad(0 35px)
+        @include media($tablet)
+            max-width: 500px
+            @include pad(0 35px)
+        @include media($desktop)
+            max-width: 650px
+            @include pad(0 35px)
+        @include media($large-desktop)
+            max-width: 850px
+            @include pad(0 35px)
+    i
+        display: block
+        font-size: 40pt
+        margin: 0 0 10px 0
+    a
+        &:link, &:visited
+            color: #FFFFFF
+            text-decoration: none
+            font-weight: 800
+            transition: all ease-in-out 0.3s
+        &:hover, &:active, &:focus
+            color: $gold
+
+    .cta
+        align-self: center
+
+        &::before
+            content: " "
+            display: block
+            width: 100%
+            margin: 30px 0 0 0
+
+.white-bg
+    background: #FFFFFF
+
+.black-bg
+    background: $black
+
+    h3
+        color: #FFFFFF
+        font-size: 2.2em
+        text-transform: uppercase
+    p
+        color: $light-silver
+
+// Footer
+footer
+    background: $black
+    padding: 50px 0
+.alert
+    text-align: left
+    color: #FFFFFF
+    padding: 3% 0
+
+    i
+        font-size: 80pt
+    ul
+        text-align: left
+        margin: 0
+        padding: 0
+    li
+        line-height: $line-height
+        list-style: disc
+.do
+    background: $green
+
+.dont
+    background: $red
+
+.consider
+    background: $gold
+    color: $black
+
+
+.alert-1
+    text-align: left
+    color: $black
+    padding: 25px 0
+    border-bottom: 1px dashed $light-silver
+    p
+        margin-bottom: 0
+    &.do, &.dont, &.consider
+        background: transparent
+    .container
+        padding: 0
+        margin: 0
+    i
+        font-size: 32pt
+
+    &.do
+        border-bottom: none
+        i.fa
+            color: $green
+
+    &.dont
+        i.fa
+            color: $red
+    &.consider
+        i.fa
+            color: $gold
+
+.colours
+    background: #F1f1f1
+
+.white
+    background: #FFFFFF
+    .caption, &::before
+        color: $dark-silver
+
+.consumer-blue
+    background: $consumer-blue
+    .caption, &::before, h1, h2, h3, h4, h5, h6, p, ul, li
+        color: #FFFFFF
+
+.corporate-blue
+    background: $corporate-blue
+    .caption, &::before
+        color: #FFFFFF
+
+.black
+    background: $black
+    .caption, &::before
+        color: #FFFFFF
+
+.gold
+    background: $gold
+    .caption, &::before
+        color: $black
+
+.light-silver
+    background: $light-silver
+    .caption, &::before
+        color: $black
+
+.sky-blue
+    background: $sky-blue
+    .caption, &::before
+        color: $black
+
+.magenta
+    background: $magenta
+    .caption, &::before
+        color: #FFFFFF
+
+.green
+    background: $green
+    .caption, &::before
+        color: #FFFFFF
+
+.teal
+    background: $teal
+    .caption, &::before
+        color: #FFFFFF
+
+.orange
+    background: $orange
+    .caption, &::before
+        color: #FFFFFF
+
+.red
+    background: $red
+    .caption, &::before
+        color: #FFFFFF
+
+.purple
+    background: $purple
+    .caption, &::before
+        color: #FFFFFF
+
+.dark-silver
+    background: $dark-silver
+    .caption, &::before
+        color: #FFFFFF
+
+.recliner-bg
+    background: url('../img/img-2.jpg')
+    background-position: center
+    background-size: cover
+
+.hidden
+    display: none !important
+
+.blueprint
+    .col-4
+        background: $sky-blue
+        padding: 30px
+
+.border
+    border: 1px solid $light-silver

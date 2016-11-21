@@ -1,0 +1,259 @@
+
+
+h1, h2, h3, h4, h5, h6
+    margin: 0
+    font-family: $markotbold
+    text-transform: uppercase
+
+h2.section-title
+    color: $black
+    font-size: 2.2em
+    font-family: $markotbold
+    font-weight: 300
+
+
+ul, li
+    padding: 0
+    margin: 0
+    list-style: none
+
+p
+    font-size: 1em
+    line-height: 1.6em
+
+p, ul, li, ol
+    font-family: $markotbook
+
+a
+    text-decoration: none
+
+.black-bg
+    text-align: center
+    h2
+        color: $dark-silver
+        text-transform: uppercase
+        font-size: 1em
+
+table
+    text-align: left
+
+
+footer
+    ul
+        text-align: left
+        margin: 0
+        padding: 0
+    li
+        text-align: left
+        list-style: none
+    h3
+        color: white
+        margin: 0 0 15px 0
+        padding: 0
+    a
+        &:link, &:visited
+            color: $light-silver
+            text-decoration: none
+            line-height: 1.8em
+            transition: all ease-in-out 0.4s
+        &:hover, &:active, &:focus
+            color: $gold
+
+
+ul.wrong-list
+    li
+        line-height: $line-height
+        &:before
+            content: "\f00d"
+            font-family: fontAwesome
+            color: #dd1a32
+            margin-right: 15px
+
+ul.right-list
+    li
+        line-height: $line-height
+        &:before
+            content: "\f00c"
+            font-family: fontAwesome
+            color: #00ab4f
+            margin-right: 15px
+
+
+.align-left
+    p, h3
+        text-align: left
+
+//buttons
+
+
+.btn-down
+    &::after
+        font-family: fontAwesome
+        content: "\f078"
+        margin-left: 10px
+
+
+.recliner-bg
+    color: white
+
+.page-title
+    color: #FFFFFF
+    @include media($mobile)
+        text-align: left
+        width: 80%
+    h2
+        text-transform: uppercase
+        @include media($mobile)
+            font-size: 2em
+            line-height: 1em
+            padding: 0 0 10px 0
+        @include media($tablet)
+            font-size: 2em
+        @include media($desktop)
+            font-size: 3em
+    h3
+        font-family: $markotbook
+        font-weight: 300
+        @include media($mobile)
+            font-size: 0.7em
+            font-weight: 300
+
+        @include media($tablet)
+            font-size: 1em
+.align-c
+    text-align: center
+
+.about
+    h2
+        &::after
+            height: 2px
+            width: 15px
+            content: " "
+            background: rgba(255,255,255,0.5)
+            display: block
+            margin: 20px auto
+    p
+        font-family: $markotbook
+
+.black-bg
+    p, ul, li
+        color: $light-silver
+
+.blueprint
+    .col-4
+        text-align: center
+        p, h3, ul, li
+            color: $black
+        h3
+            font-size: 1.4em
+            &::after
+                width: 10px
+                content: "\f141"
+                display: block
+                margin: 10px auto
+                font-family: fontAwesome
+                opacity: 0.2
+
+.colours-wrap
+    h4
+        text-transform: uppercase
+        &::after
+            height: 1px
+            width: 10px
+            content: " "
+            display: block
+            margin: 15px auto
+            background: rgba(255,255,255,0.5)
+    li
+        color: #FFFFFF
+        text-align: center
+    p
+        margin: 0 0 10px 0
+        font-size: 0.8em
+
+    h4
+        &::after
+
+    .gold, .light-silver
+        color: $black
+
+
+.btn
+    display: block
+    @include padding(10px)
+    @include margin(25px 0 0 0)
+.btn-white
+    color: #FFFFFF
+    // border: 2px solid #FFFFFF
+
+.btn-black
+    color: $black
+    // border: 2px solid $black
+
+.cta
+    .btn-down
+        border: 2px solid #FFFFFF
+        @include pad(15px)
+        font-family: $markotbold
+        text-transform: uppercase
+        &:hover, &:active, &:focus
+            background: #FFFFFF
+            color: $consumer-blue
+
+.grid-item
+    li
+        display: inline-block
+        @include pad(0 10px 0 0)
+        line-height: 22pt
+        list-style: disc
+        &::before
+            content: "\f111"
+            padding-right: 10px
+            font-family: fontAwesome
+            font-size: 6pt
+
+.dd
+    text-align: center
+
+    .list
+        list-style: disc
+        padding-left: 20px
+        li
+            text-align: left
+            list-style: disc
+
+.steps
+    display: flex
+    align-items: center
+    justify-content: center
+    li
+        text-align: center
+        &:after
+            font-family: fontAwesome
+            content: "\f061"
+            color: $magenta
+            font-size: 28pt
+            margin: 0 10px
+
+        &:last-child
+            &:after
+                display: none
+
+    p
+        text-transform: uppercase
+        font-weight: 700
+        font-size: 10pt
+        background: $consumer-blue
+        color: #FFFFFF
+        display: inline-flex
+        height: 60px
+        justify-content: center
+        align-items: center
+        padding: 0 20px
+
+    i.fa
+        border-right: 1px solid rgba(0,0,0,0.3)
+        display: inline-block
+        font-size: 18pt
+        padding: 0 10px 0 0
+        

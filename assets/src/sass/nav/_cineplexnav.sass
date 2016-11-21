@@ -1,0 +1,228 @@
+.primary-nav
+    li
+        list-style: none
+        &::after
+            height: 1px
+            width: 20px
+            display: block
+            background: rgba(255,255,255,0.2)
+            content: " "
+            transition: all ease-in-out 0.4s
+            @include media($mobile)
+                margin: 4px auto
+            @include media($tablet)
+                margin: 8px auto
+            @include media($desktop)
+                margin: 10px auto
+        &:hover, &:active, &:focus
+            a
+                &:link, &:visited
+                    color: white
+            &::after
+                width: 100px
+                background: rgba(255,255,255,0.5)
+
+    a
+        &:link, &:visited
+            color: #FFFFFF
+            text-decoration: none
+            text-transform: uppercase
+            transition: all ease-in-out 0.4s
+            font-family: $markotbold
+            @include media($mobile)
+                font-size: 0.6em
+
+.p-nav
+    @include media($mobile)
+        @include span-columns(12)
+    @include media($tablet)
+        @include span-columns(6)
+    @include media($desktop)
+        @include span-columns(3)
+    .logo
+        width: 120px
+    li
+        list-style: none
+
+    a
+        &:link, &:visited
+            color: #FFFFFF
+            text-decoration: none
+            font-size: 12pt
+            text-transform: uppercase
+            transition: all ease-in-out 0.4s
+            line-height: 1.9
+            font-family: $markotbold
+    //
+    //
+    //
+    //
+    // .nav-logo-category
+    //     @include span-columns(6)
+    //     @include omega(2n)
+
+.vertical-tabs
+    ul
+        border-right: 1px solid rgba(255,255,255,0.1)
+
+.zero-padding
+    padding: 0
+
+.zero-margin
+    margin: 0
+
+li.nav-logo
+    width: 250px
+    text-align: center
+    margin: 0 auto 25px auto
+
+.align-bottom
+    align-self: flex-end
+
+.s-nav
+    @include media($desktop)
+        @include span-columns(9)
+    ul
+        padding: 0
+        margin: 0
+        opacity: 0
+        transition: all ease-in-out 0.4s
+        display: flex
+        justify-content: flex-end
+
+    ul.show
+        @include media($mobile)
+            opacity: 0
+        @include media($tablet)
+            opacity: 1
+        @include media($desktop)
+            opacity: 1
+    li
+        padding: 0
+        margin: 0
+        display: inline-flex
+        background: rgba(9,53,142,0)
+        transition: background ease-in-out 0.6s
+        transition-delay: 0.1s
+
+    a
+        &:link, &:visited
+            color: white
+            text-decoration: none
+            text-transform: uppercase
+            font-size: 0.7em
+            font-family: $markotbold
+            display: block
+            transition: all ease-in-out 0.4s
+        &:hover, &:active
+            background: $orange
+    .active
+        background: rgba(9,53,142,1)
+    @include media($mobile)
+        display: none
+    @include media($tablet)
+        display: block
+    @include media($desktop)
+        ul
+            text-align: right
+        a
+            &:link, &:visited
+                line-height: $header-height-M
+                padding: 0 20px
+
+
+.above-fold-nav
+    max-width: 80%
+
+
+    @include media($mobile)
+        width: 100%
+        position: absolute
+        bottom: 50px
+        margin: 0 auto
+        .col-4
+            @include span-columns(12)
+        ul
+            margin: 0
+        li
+            text-align: left
+            border-bottom: 1px solid rgba(255,255,255,0.25)
+            margin: 0
+            &:last-child
+                border-bottom: 0
+            a
+                &:link, &:visited
+                    font-family: $markotbold
+                    font-size: 0.8em
+                    text-transform: uppercase
+                    height: 100%
+                    display: block
+                    line-height: 40px
+                    background: transparent
+                    @include pad(0)
+                    &::after
+                        content: "\f18e"
+                        font-family: fontAwesome
+                        float: right
+                        color: white
+                        font-size: 14pt
+
+    @include media($desktop)
+        position: relative
+        text-align: left
+        padding: 0
+        margin: 0
+        .col-4
+            @include span-columns(4)
+        ul
+            margin-left: 0
+        li
+            display: block
+            overflow: hidden
+            padding: 0
+            margin: 0 1px 0 0
+            border-bottom: 0
+            // &:first-child
+            //     a
+            //         &:link, &:visited
+            //             padding: 0 20px 0 0
+            &:last-child
+                border-right: 0
+            a
+                &:link, &:visited
+                    padding: 0
+                    font-family: $markotbold
+                    color: white
+                    z-index: 2
+                    text-transform: uppercase
+                    font-size: 0.8em
+                    display: inline-block
+                    line-height: 45px
+                &::before
+                    content: "\f18e"
+                    font-family: fontAwesome
+                    float: right
+                    color: white
+                    font-size: 14pt
+                    padding: 0 20px 0 10px
+                &::after
+                    display: none
+                &:hover, &:active, &:focus
+                    color: $sky-blue
+                    &::after
+                        opacity: 1
+
+.no-background
+	background: rgba(1,1,1,0)
+
+
+.background
+	background: rgba(1,1,1,1)
+
+
+li.title
+    font-family: $markotbold
+    text-transform: uppercase
+    color: rgba(255,255,255,1)
+    font-size: 1.2em
+    margin: 0 0 10px 0

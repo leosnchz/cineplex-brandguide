@@ -1,0 +1,204 @@
+//vertical tabs
+.vertical-tabs-container {
+  $medium-screen: 30em !default;
+  $vertical-tabs-height: 20em;
+    text-align: left;
+    p, ul {
+        @include pad(0 30px);
+    }
+  @include clearfix;
+  .vertical-tabs {
+    display: none;
+
+    @include media($medium-screen) {
+      display: inline;
+      float: left;
+      width: 20%;
+    }
+  }
+
+  .vertical-tab {
+    @include media($medium-screen) {
+        display: block;
+        text-align: left;
+        background: $sky-blue;
+        color: white;
+        font-family: $markotbold;
+        text-transform: uppercase;
+        line-height: 3;
+        @include pad(0 15px);
+        font-size: 0.8em;
+        transition: all ease-in-out 0.4s;
+        margin: 0 0 1px 0;
+
+        &::after {
+            content: "\f054";
+            float: right;
+            font-family: fontAwesome;
+
+        }
+      &.is-active {
+        color: #FFFFFF;
+        background: $orange;
+
+      }
+    }
+  }
+
+  .vertical-tab-content-container {
+    display: block;
+
+    @include media($medium-screen) {
+      @include size(80% $vertical-tabs-height);
+      display: inline-block;
+    }
+  }
+
+  .vertical-tab-content {
+    @include media($medium-screen) {
+      display: none;
+    }
+  }
+
+  .vertical-tab-accordion-heading {
+    cursor: pointer;
+    display: block;
+
+    @include media($medium-screen) {
+      display: none;
+    }
+  }
+}
+
+
+//video
+.video{
+    &::after {
+        background: rgba(0,0,0,0.5);
+        content: " ";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        top: 0;
+        left: 0;
+    }
+}
+video#bgvid {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    background: url(polina.jpg) no-repeat;
+    background-size: cover;
+    z-index: -1;
+
+
+}
+
+
+// boxes
+@mixin grid-item-columns($columns) {
+  width: (100% / 12) * $columns;
+}
+
+.grid-items-lines {
+  $base-background-color: white !default;
+  $dark-gray: #333 !default;
+  $light-gray: #DDD !default;
+  $medium-screen: 40em !default;
+  $large-screen: 53.75em !default;
+  $base-font-color: $dark-gray !default;
+  $grid-items-background: $base-background-color;
+  $grid-item-background: $base-background-color;
+  $grid-item-border: 1px solid transparentize($base-font-color, 0.8);
+  $grid-item-columns: 4;
+  $grid-item-big-columns: 8;
+  $grid-item-color: $base-font-color;
+  $grid-item-height: 14em;
+
+  @include clearfix;
+  position: relative;
+
+  .grid-item {
+    background: $grid-item-background;
+    border-bottom: $grid-item-border;
+    border-right: $grid-item-border;
+    cursor: pointer;
+    float: left;
+    height: $grid-item-height;
+    outline: none;
+    overflow: hidden;
+    padding: 2em;
+    text-decoration: none;
+    transition: all 0.2s ease-in-out;
+    width: 100%;
+
+    @include media($large-screen) {
+      @include grid-item-columns($grid-item-columns);
+    }
+
+    &:focus,
+    &:hover {
+      background: transparentize($grid-item-color, 0.95);
+    }
+  }
+
+  .grid-item img {
+      display: block;
+      height: 2.5em;
+      margin-bottom: 1.2em;
+      opacity: 0.2;
+    }
+
+  .grid-item h1 {
+      color: $grid-item-color;
+      font-size: 1.3em;
+      margin-bottom: 0.4em;
+    }
+
+  .grid-item p {
+      color: transparentize($grid-item-color, 0.4);
+      line-height: 1.5em;
+
+      @include media($medium-screen) {
+        max-width: 70%;
+      }
+    }
+
+  .grid-item-big {
+    @include media($large-screen) {
+      @include grid-item-columns($grid-item-big-columns);
+    }
+    p {
+      @include media($medium-screen) {
+        max-width: 95%;
+      }
+    }
+  }
+
+  // this, below, might not be the most beautiful solution but it removes the outer borders by using the background color.
+  .bottom-cover {
+    background: $grid-items-background;
+    bottom: 0;
+    height: 3px;
+    position: absolute;
+    width: 100%;
+  }
+
+  .right-cover {
+    background: $grid-items-background;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    width: 4px;
+  }
+}

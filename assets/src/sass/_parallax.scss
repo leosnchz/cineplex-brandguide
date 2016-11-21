@@ -1,0 +1,103 @@
+$parallax-window-height: 30em;
+$parallax-background-height: $parallax-window-height * 2;
+
+.parallax-window {
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+}
+
+.parallax-static-content {
+  color: #9A9A8A;
+  position: relative;
+  z-index: 9;
+}
+
+.parallax-background {
+  height: 100%;
+  left: 0;
+  position: absolute;
+  width: 100%;
+}
+
+.home {
+    .parallax-background {
+        background: url("../img/home-bg.jpg");
+        background-position: center;
+        background-size: cover;
+    }
+}
+
+.knowcineplex {
+    .parallax-background {
+        background: url("../img/knowcineplex.jpg");
+        background-position: center;
+        background-size: cover;
+    }
+}
+
+.colours {
+    .parallax-background {
+        background: url("../img/colours.jpg");
+        background-position: center;
+        background-size: cover;
+    }
+}
+
+.typefaces {
+    .parallax-background {
+        background: url("../img/typography.jpg");
+        background-position: center;
+        background-size: cover;
+    }
+}
+
+.cineplexstore {
+    .parallax-background {
+        background: url("../img/cineplex-store.jpg");
+        background-position: center;
+        background-size: cover;
+    }
+}
+
+.events {
+    .parallax-background {
+        background: url("../img/events.jpg");
+        background-position: center;
+        background-size: cover;
+    }
+}
+
+.productsandservices {
+    .parallax-background {
+        background: url("../img/productsandservices.jpg");
+        background-position: center;
+        background-size: cover;
+    }
+}
+
+.designbestpractices {
+    .parallax-background {
+        background: url("../img/designbestpractices.jpg");
+        background-position: center;
+        background-size: cover;
+    }
+}
+
+.ps-gaming {
+    .parallax-background {
+        background: url("../img/gaming.jpg");
+        background-position: center;
+        background-size: cover;
+    }
+}
+
+.grid {
+    .parallax-background {
+        background: url("../img/grid-system.jpg");
+        background-position: center;
+        background-size: cover;
+    }
+}
