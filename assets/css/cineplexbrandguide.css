@@ -2341,10 +2341,10 @@ h1, h2, h3, h4, h5, h6 {
   text-transform: uppercase; }
 
 h2.section-title {
-  color: #2D2926;
   font-size: 2.2em;
   font-family: "MarkOT-Heavy", sans-serif;
-  font-weight: 300; }
+  font-weight: 300;
+  text-align: center; }
 
 ul, li {
   padding: 0;
@@ -2352,7 +2352,7 @@ ul, li {
   list-style: none; }
 
 p {
-  font-size: 1em;
+  font-size: 0.9em;
   line-height: 1.6em; }
 
 p, ul, li, ol {
@@ -2573,6 +2573,9 @@ ul.right-list li {
     display: inline-block;
     font-size: 18pt;
     padding: 0 10px 0 0; }
+
+.xscape {
+  color: #FFFFFF; }
 
 .primary-nav li {
   list-style: none; }
@@ -2983,6 +2986,7 @@ Main components
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   overflow: auto;
@@ -3196,7 +3200,9 @@ section {
   width: 100%;
   z-index: 5;
   position: relative;
-  min-height: 100vh;
+  min-height: 100vh; }
+
+.pad-top {
   padding-top: 100px; }
 
 .full-height {
@@ -3583,7 +3589,9 @@ section .col-4 {
   .home a:hover, .home a:active, .home a:focus, .knowcineplex a:hover, .knowcineplex a:active, .knowcineplex a:focus {
     color: #F1C400; }
   .home .cta, .knowcineplex .cta {
-    align-self: center; }
+    align-self: center;
+    position: absolute;
+    bottom: 100px; }
     .home .cta::before, .knowcineplex .cta::before {
       content: " ";
       display: block;
@@ -3731,6 +3739,12 @@ footer {
   background-position: center;
   background-size: cover; }
 
+.xscape {
+  background: url("../img/xscape-bg.jpg");
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed; }
+
 .hidden {
   display: none !important; }
 
@@ -3740,6 +3754,18 @@ footer {
 
 .border {
   border: 1px solid #A7A8AA; }
+
+a.cta-down i {
+  font-size: 22pt; }
+
+a.cta-down:link, a.cta-down:visited {
+  color: #FFFFFF;
+  position: absolute;
+  bottom: 50px;
+  transition: all ease-in-out 0.2; }
+
+a.cta-down:hover, a.cta-down:active, a.cta-down:focus {
+  bottom: 40px; }
 
 .table-minimal {
   border-collapse: separate;
@@ -4251,6 +4277,11 @@ Main Components
 
 .grid .parallax-background {
   background: url("../img/grid-system.jpg");
+  background-position: center;
+  background-size: cover; }
+
+.ps-exhibition .parallax-background {
+  background: url("../img/ps-exhibition-bg.jpg");
   background-position: center;
   background-size: cover; }
 

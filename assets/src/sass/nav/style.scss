@@ -168,6 +168,7 @@ Main components
 	-webkit-backface-visibility: hidden;
 	backface-visibility: hidden;
 	display: flex;
+    flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	overflow: auto;

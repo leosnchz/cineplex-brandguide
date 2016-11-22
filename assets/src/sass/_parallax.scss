@@ -101,3 +101,11 @@ $parallax-background-height: $parallax-window-height * 2;
         background-size: cover;
     }
 }
+
+.ps-exhibition {
+    .parallax-background {
+        background: url("../img/ps-exhibition-bg.jpg");
+        background-position: center;
+        background-size: cover;
+    }
+}

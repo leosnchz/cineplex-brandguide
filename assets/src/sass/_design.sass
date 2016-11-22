@@ -30,7 +30,8 @@
 
     .cta
         align-self: center
-
+        position: absolute
+        bottom: 100px
         &::before
             content: " "
             display: block
@@ -184,6 +185,16 @@ footer
     background-position: center
     background-size: cover
 
+
+.xscape
+    background: url('../img/xscape-bg.jpg')
+    background-position: center
+    background-size: cover
+    background-attachment: fixed
+
+
+
+
 .hidden
     display: none !important
 
@@ -194,3 +205,14 @@ footer
 
 .border
     border: 1px solid $light-silver
+
+a.cta-down
+    i
+        font-size: 22pt
+    &:link, &:visited
+        color: #FFFFFF
+        position: absolute
+        bottom: 50px
+        transition: all ease-in-out 0.2
+    &:hover, &:active, &:focus
+        bottom: 40px
