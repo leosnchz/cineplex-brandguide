@@ -59,7 +59,7 @@ section
 
 .pad-top
     padding-top: 100px
-    
+
 .full-height
     min-height: 100vh
 
@@ -294,3 +294,19 @@ section
 .legal
     .col-3
         @include omega(4n)
+
+
+//masonry
+
+ul.masonry-container
+    -moz-column-width: 13em
+    -webkit-column-width: 13em
+    -moz-column-gap: 1em
+    -webkit-column-gap: 1em
+
+    li
+        display: inline-block
+        margin:  0.25rem
+        padding:  0
+        width:  100%
+        background:  #efefef

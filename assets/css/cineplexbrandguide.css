@@ -3556,6 +3556,18 @@ section .col-4 {
 .legal .col-3:nth-child(4n+1) {
   clear: left; }
 
+ul.masonry-container {
+  -moz-column-width: 13em;
+  -webkit-column-width: 13em;
+  -moz-column-gap: 1em;
+  -webkit-column-gap: 1em; }
+  ul.masonry-container li {
+    display: inline-block;
+    margin: 0.25rem;
+    padding: 0;
+    width: 100%;
+    background: #efefef; }
+
 .home, .knowcineplex {
   text-align: center;
   flex-direction: column; }
@@ -3762,10 +3774,10 @@ a.cta-down:link, a.cta-down:visited {
   color: #FFFFFF;
   position: absolute;
   bottom: 50px;
-  transition: all ease-in-out 0.2; }
+  transition: all ease-in-out 0.4s; }
 
 a.cta-down:hover, a.cta-down:active, a.cta-down:focus {
-  bottom: 40px; }
+  color: #71C5E8; }
 
 .table-minimal {
   border-collapse: separate;
