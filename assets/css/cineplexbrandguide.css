@@ -4297,6 +4297,11 @@ Main Components
   background-position: center;
   background-size: cover; }
 
+.theatrical .parallax-background {
+  background: url("../img/theatrical-logos-bg.jpg");
+  background-position: center;
+  background-size: cover; }
+
 .vertical-tabs-container {
   text-align: left; }
   .vertical-tabs-container p, .vertical-tabs-container ul {

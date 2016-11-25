@@ -109,3 +109,11 @@ $parallax-background-height: $parallax-window-height * 2;
         background-size: cover;
     }
 }
+
+.theatrical {
+    .parallax-background {
+        background: url("../img/theatrical-logos-bg.jpg");
+        background-position: center;
+        background-size: cover;
+    }
+}
