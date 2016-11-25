@@ -1,26 +1,36 @@
 .primary-nav
     li
         list-style: none
+        transition: all ease-in-out 0.3s
+        position: relative
+        padding: 0 15px
         &::after
-            height: 1px
-            width: 20px
+            position: absolute
+            height: 100%
+            width: 0
+            top: 0
+            left: 50%
             display: block
-            background: rgba(255,255,255,0.2)
+            background: $consumer-blue
             content: " "
             transition: all ease-in-out 0.4s
+            z-index: -1
+
             @include media($mobile)
-                margin: 4px auto
+                margin: 5px auto
             @include media($tablet)
-                margin: 8px auto
+                margin: 5px auto
             @include media($desktop)
-                margin: 10px auto
+                margin: 5px auto
         &:hover, &:active, &:focus
             a
                 &:link, &:visited
                     color: white
+
             &::after
-                width: 100px
-                background: rgba(255,255,255,0.5)
+                width: 100%
+                background: $consumer-blue
+                left: 0
 
     a
         &:link, &:visited
@@ -31,6 +41,8 @@
             font-family: $markotbold
             @include media($mobile)
                 font-size: 0.6em
+            @include media($desktop)
+                font-size: 11pt
 
 .p-nav
     @include media($mobile)

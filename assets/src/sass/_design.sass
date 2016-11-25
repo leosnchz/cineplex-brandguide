@@ -216,3 +216,11 @@ a.cta-down
         transition: all ease-in-out 0.4s
     &:hover, &:active, &:focus
         color: $sky-blue
+
+
+#framework
+    @include media($mobile)
+        display: none
+
+    @include media($desktop)
+        display: block
