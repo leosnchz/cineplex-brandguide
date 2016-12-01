@@ -30,7 +30,6 @@ Main components
 	transition: all ease-in-out 0.4s;
 	@include pad(0 15px);
 	@include font-smoothing;
-
 	@include MQ(L) {
 
 		/* Force Hardware Acceleration in WebKit */
@@ -165,13 +164,25 @@ Main components
 	padding: $header-height-S 0;
 	-webkit-backface-visibility: hidden;
 	backface-visibility: hidden;
-	display: flex;
-    flex-direction: column;
-	justify-content: center;
-	align-items: center;
 	overflow: auto;
+    display: flex;
+    flex-direction: column;
 	/* this fixes the buggy scrolling on webkit browsers - mobile devices only - when overflow property is applied */
 	-webkit-overflow-scrolling: touch;
+    @include media($mobile){
+        justify-content: flex-end;
+        align-items: stretch;
+        padding: 0 25px 25px 25px;
+    }
+    @include media($tablet) {
+        justify-content: center;
+        align-items: center;
+    }
+    @include media($desktop) {
+    	justify-content: center;
+    	align-items: center;;
+    }
+
 
 	@include transform(translateY(-100%));
 	@include transition-property(transform);
@@ -197,26 +208,6 @@ Main components
 	}
 }
 
-.cd-intro {
-	position: relative;
-	height: 100%;
-	background: url('../img/cd-background-img.jpg') no-repeat center center;
-	background-size: cover;
-	z-index: $content-zindex;
-	@include font-smoothing;
-
-
-
-	@include MQ(M) {
-		h1 {
-			@include font-size(30px);
-		}
-	}
-
-	@include MQ(L) {
-		height: 700px;
-	}
-}
 
 .cd-main-content {
 	position: relative;

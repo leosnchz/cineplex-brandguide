@@ -1,36 +1,40 @@
 .primary-nav
-    li
+    li.nav-item
         list-style: none
-        transition: all ease-in-out 0.3s
+        transition: all ease-in-out 0.4s
         position: relative
-        padding: 0 15px
         &::after
-            position: absolute
-            height: 100%
+            height: 5px
             width: 0
-            top: 0
+            bottom: 0
             left: 50%
             display: block
-            background: $consumer-blue
+            background: $sky-blue
             content: " "
             transition: all ease-in-out 0.4s
             z-index: -1
+            position: absolute
 
-            @include media($mobile)
-                margin: 5px auto
-            @include media($tablet)
-                margin: 5px auto
-            @include media($desktop)
-                margin: 5px auto
         &:hover, &:active, &:focus
             a
                 &:link, &:visited
                     color: white
-
-            &::after
+            &:after
                 width: 100%
-                background: $consumer-blue
+                background: $sky-blue
                 left: 0
+        @include media($mobile)
+            border-bottom: 1px solid rgba(255,255,255,0.3)
+            text-align: left
+            line-height: 33px
+            font-size: 10pt
+            &:last-child
+                border-bottom: none
+        @include media($tablet)
+            border-bottom: none
+        @include media($desktop)
+            font-size: 14pt
+            line-height: 30pt
 
     a
         &:link, &:visited
@@ -39,16 +43,13 @@
             text-transform: uppercase
             transition: all ease-in-out 0.4s
             font-family: $markotbold
-            @include media($mobile)
-                font-size: 0.6em
-            @include media($desktop)
-                font-size: 11pt
+
 
 .p-nav
     @include media($mobile)
         @include span-columns(12)
     @include media($tablet)
-        @include span-columns(6)
+        @include span-columns(4)
     @include media($desktop)
         @include span-columns(3)
     .logo
@@ -92,6 +93,11 @@ li.nav-logo
     align-self: flex-end
 
 .s-nav
+    @include media($mobile)
+        display: none
+    @include media($tablet)
+        @include span-columns(8)
+
     @include media($desktop)
         @include span-columns(9)
     ul
@@ -145,12 +151,10 @@ li.nav-logo
 
 .above-fold-nav
     max-width: 80%
-
-
     @include media($mobile)
         width: 100%
         position: absolute
-        bottom: 50px
+        bottom: 80px
         margin: 0 auto
         .col-4
             @include span-columns(12)
@@ -172,15 +176,10 @@ li.nav-logo
                     line-height: 40px
                     background: transparent
                     @include pad(0)
-                    &::after
-                        content: "\f18e"
-                        font-family: fontAwesome
-                        float: right
-                        color: white
-                        font-size: 14pt
+
 
     @include media($desktop)
-        position: relative
+        position: static
         text-align: left
         padding: 0
         margin: 0
@@ -194,10 +193,7 @@ li.nav-logo
             padding: 0
             margin: 0 1px 0 0
             border-bottom: 0
-            // &:first-child
-            //     a
-            //         &:link, &:visited
-            //             padding: 0 20px 0 0
+
             &:last-child
                 border-right: 0
             a
@@ -209,20 +205,29 @@ li.nav-logo
                     text-transform: uppercase
                     font-size: 0.8em
                     display: inline-block
-                    line-height: 45px
+                    line-height: 30px
+
                 &::before
                     content: "\f18e"
                     font-family: fontAwesome
                     float: right
                     color: white
-                    font-size: 14pt
+                    font-size: 15px
                     padding: 0 20px 0 10px
+
                 &::after
-                    display: none
+                    content: " "
+                    background: $sky-blue
+                    width: 0
+                    height: 3px
+                    display: block
+                    transition: all ease-in-out 0.4s
+
                 &:hover, &:active, &:focus
-                    color: $sky-blue
+                    &::before
+                        color: $sky-blue
                     &::after
-                        opacity: 1
+                        width: 100%
 
 .no-background
 	background: rgba(1,1,1,0)
@@ -232,9 +237,8 @@ li.nav-logo
 	background: rgba(1,1,1,1)
 
 
-li.title
+h3.nav-title
     font-family: $markotbold
     text-transform: uppercase
-    color: rgba(255,255,255,1)
-    font-size: 1.2em
     margin: 0 0 10px 0
+    color: #FFFFFF

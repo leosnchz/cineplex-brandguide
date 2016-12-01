@@ -1,5 +1,4 @@
 @charset "UTF-8";
-@import "http://mediafiles.cineplex.com/webfont2016-dev-notpublic/stylesheet.css";
 html {
   box-sizing: border-box; }
 
@@ -2337,14 +2336,16 @@ html {
 
 h1, h2, h3, h4, h5, h6 {
   margin: 0;
-  font-family: "MarkOT-Heavy", sans-serif;
+  font-family: "FFMarkWebProBold", sans-serif;
   text-transform: uppercase; }
 
 h2.section-title {
   font-size: 2.2em;
-  font-family: "MarkOT-Heavy", sans-serif;
+  font-family: "FFMarkWebProBold", sans-serif;
   font-weight: 300;
-  text-align: center; }
+  text-align: center;
+  color: #00358E;
+  letter-spacing: 0.08em; }
 
 ul, li {
   padding: 0;
@@ -2356,10 +2357,12 @@ p {
   line-height: 1.6em; }
 
 p, ul, li, ol {
-  font-family: "MarkOT-Extralight", sans-serif; }
+  font-family: "FFMarkWebPro", sans-serif; }
 
-a {
-  text-decoration: none; }
+a:link, a:visited {
+  text-decoration: none;
+  font-family: "FFMarkWebProBold", sans-serif;
+  color: #FF671F; }
 
 .black-bg {
   text-align: center; }
@@ -2441,15 +2444,23 @@ ul.right-list li {
       .page-title h2 {
         font-size: 3em; } }
   .page-title h3 {
-    font-family: "MarkOT-Extralight", sans-serif;
-    font-weight: 300; }
+    font-family: "FFMarkWebPro", sans-serif; }
     @media screen and (min-width: 20em) {
       .page-title h3 {
-        font-size: 0.7em;
-        font-weight: 300; } }
+        font-size: 0.7em; } }
     @media screen and (min-width: 720px) {
       .page-title h3 {
         font-size: 1em; } }
+    @media screen and (min-width: 60em) {
+      .page-title h3 {
+        font-size: 1.5em;
+        margin: 5px 0 0 0; } }
+  .page-title h1 {
+    text-transform: uppercase;
+    font-weight: normal; }
+    @media screen and (min-width: 60em) {
+      .page-title h1 {
+        font-size: 40pt; } }
 
 .align-c {
   text-align: center; }
@@ -2463,7 +2474,7 @@ ul.right-list li {
   margin: 20px auto; }
 
 .about p {
-  font-family: "MarkOT-Extralight", sans-serif; }
+  font-family: "FFMarkWebPro", sans-serif; }
 
 .black-bg p, .black-bg ul, .black-bg li {
   color: #A7A8AA; }
@@ -2517,11 +2528,34 @@ ul.right-list li {
 .cta .btn-down {
   border: 2px solid #FFFFFF;
   padding: 15px;
-  font-family: "MarkOT-Heavy", sans-serif;
+  font-family: "FFMarkWebProBold", sans-serif;
   text-transform: uppercase; }
   .cta .btn-down:hover, .cta .btn-down:active, .cta .btn-down:focus {
     background: #FFFFFF;
     color: #00358E; }
+
+a.cta-down i {
+  font-size: 22pt; }
+
+a.cta-down:link, a.cta-down:visited {
+  color: #FFFFFF;
+  position: absolute;
+  transition: all ease-in-out 0.4s; }
+
+a.cta-down:hover, a.cta-down:active, a.cta-down:focus {
+  color: #71C5E8; }
+
+@media screen and (min-width: 20em) {
+  a.cta-down {
+    bottom: 15px; } }
+
+@media screen and (min-width: 720px) {
+  a.cta-down {
+    bottom: 25px; } }
+
+@media screen and (min-width: 60em) {
+  a.cta-down {
+    bottom: 50px; } }
 
 .grid-item li {
   display: inline-block;
@@ -2547,80 +2581,73 @@ ul.right-list li {
   display: flex;
   align-items: center;
   justify-content: center; }
-  .steps li {
-    text-align: center; }
-    .steps li:after {
-      font-family: fontAwesome;
-      content: "\f061";
-      color: #BC204B;
-      font-size: 28pt;
-      margin: 0 10px; }
-    .steps li:last-child:after {
-      display: none; }
+  .steps li:last-child:after {
+    display: none; }
   .steps p {
     text-transform: uppercase;
     font-weight: 700;
     font-size: 10pt;
-    background: #00358E;
-    color: #FFFFFF;
-    display: inline-flex;
-    height: 60px;
-    justify-content: center;
-    align-items: center;
-    padding: 0 20px; }
+    padding: 0;
+    margin: 0;
+    border-radius: 100%;
+    background: white; }
   .steps i.fa {
-    border-right: 1px solid rgba(0, 0, 0, 0.3);
-    display: inline-block;
-    font-size: 18pt;
-    padding: 0 10px 0 0; }
+    font-size: 24pt;
+    padding: 0 0 10px 0;
+    color: #2D2926; }
+  .steps span {
+    display: block;
+    color: #2D2926;
+    padding: 0 15px; }
+  .steps h3 {
+    text-align: center !important; }
 
 .xscape {
   color: #FFFFFF; }
 
-.primary-nav li {
+.primary-nav li.nav-item {
   list-style: none;
-  transition: all ease-in-out 0.3s;
-  position: relative;
-  padding: 0 15px; }
-  .primary-nav li::after {
-    position: absolute;
-    height: 100%;
+  transition: all ease-in-out 0.4s;
+  position: relative; }
+  .primary-nav li.nav-item::after {
+    height: 5px;
     width: 0;
-    top: 0;
+    bottom: 0;
     left: 50%;
     display: block;
-    background: #00358E;
+    background: #71C5E8;
     content: " ";
     transition: all ease-in-out 0.4s;
-    z-index: -1; }
-    @media screen and (min-width: 20em) {
-      .primary-nav li::after {
-        margin: 5px auto; } }
-    @media screen and (min-width: 720px) {
-      .primary-nav li::after {
-        margin: 5px auto; } }
-    @media screen and (min-width: 60em) {
-      .primary-nav li::after {
-        margin: 5px auto; } }
-  .primary-nav li:hover a:link, .primary-nav li:hover a:visited, .primary-nav li:active a:link, .primary-nav li:active a:visited, .primary-nav li:focus a:link, .primary-nav li:focus a:visited {
+    z-index: -1;
+    position: absolute; }
+  .primary-nav li.nav-item:hover a:link, .primary-nav li.nav-item:hover a:visited, .primary-nav li.nav-item:active a:link, .primary-nav li.nav-item:active a:visited, .primary-nav li.nav-item:focus a:link, .primary-nav li.nav-item:focus a:visited {
     color: white; }
-  .primary-nav li:hover::after, .primary-nav li:active::after, .primary-nav li:focus::after {
+  .primary-nav li.nav-item:hover:after, .primary-nav li.nav-item:active:after, .primary-nav li.nav-item:focus:after {
     width: 100%;
-    background: #00358E;
+    background: #71C5E8;
     left: 0; }
+  @media screen and (min-width: 20em) {
+    .primary-nav li.nav-item {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+      text-align: left;
+      line-height: 33px;
+      font-size: 10pt; }
+      .primary-nav li.nav-item:last-child {
+        border-bottom: none; } }
+  @media screen and (min-width: 720px) {
+    .primary-nav li.nav-item {
+      border-bottom: none; } }
+  @media screen and (min-width: 60em) {
+    .primary-nav li.nav-item {
+      font-size: 14pt;
+      line-height: 30pt; } }
 
 .primary-nav a:link, .primary-nav a:visited {
   color: #FFFFFF;
   text-decoration: none;
   text-transform: uppercase;
   transition: all ease-in-out 0.4s;
-  font-family: "MarkOT-Heavy", sans-serif; }
-  @media screen and (min-width: 20em) {
-    .primary-nav a:link, .primary-nav a:visited {
-      font-size: 0.6em; } }
-  @media screen and (min-width: 60em) {
-    .primary-nav a:link, .primary-nav a:visited {
-      font-size: 11pt; } }
+  font-family: "FFMarkWebProBold", sans-serif; }
 
 @media screen and (min-width: 20em) {
   .p-nav {
@@ -2636,7 +2663,7 @@ ul.right-list li {
     float: left;
     display: block;
     margin-right: 2.35765%;
-    width: 48.82117%; }
+    width: 31.76157%; }
     .p-nav:last-child {
       margin-right: 0; } }
 
@@ -2662,7 +2689,7 @@ ul.right-list li {
   text-transform: uppercase;
   transition: all ease-in-out 0.4s;
   line-height: 1.9;
-  font-family: "MarkOT-Heavy", sans-serif; }
+  font-family: "FFMarkWebProBold", sans-serif; }
 
 .vertical-tabs ul {
   border-right: 1px solid rgba(255, 255, 255, 0.1); }
@@ -2680,6 +2707,19 @@ li.nav-logo {
 
 .align-bottom {
   align-self: flex-end; }
+
+@media screen and (min-width: 20em) {
+  .s-nav {
+    display: none; } }
+
+@media screen and (min-width: 720px) {
+  .s-nav {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 65.88078%; }
+    .s-nav:last-child {
+      margin-right: 0; } }
 
 @media screen and (min-width: 60em) {
   .s-nav {
@@ -2723,7 +2763,7 @@ li.nav-logo {
   text-decoration: none;
   text-transform: uppercase;
   font-size: 0.7em;
-  font-family: "MarkOT-Heavy", sans-serif;
+  font-family: "FFMarkWebProBold", sans-serif;
   display: block;
   transition: all ease-in-out 0.4s; }
 
@@ -2754,7 +2794,7 @@ li.nav-logo {
     .above-fold-nav {
       width: 100%;
       position: absolute;
-      bottom: 50px;
+      bottom: 80px;
       margin: 0 auto; }
       .above-fold-nav .col-4 {
         float: left;
@@ -2772,23 +2812,17 @@ li.nav-logo {
         .above-fold-nav li:last-child {
           border-bottom: 0; }
         .above-fold-nav li a:link, .above-fold-nav li a:visited {
-          font-family: "MarkOT-Heavy", sans-serif;
+          font-family: "FFMarkWebProBold", sans-serif;
           font-size: 0.8em;
           text-transform: uppercase;
           height: 100%;
           display: block;
           line-height: 40px;
           background: transparent;
-          padding: 0; }
-          .above-fold-nav li a:link::after, .above-fold-nav li a:visited::after {
-            content: "\f18e";
-            font-family: fontAwesome;
-            float: right;
-            color: white;
-            font-size: 14pt; } }
+          padding: 0; } }
   @media screen and (min-width: 60em) {
     .above-fold-nav {
-      position: relative;
+      position: static;
       text-align: left;
       padding: 0;
       margin: 0; }
@@ -2811,26 +2845,31 @@ li.nav-logo {
           border-right: 0; }
         .above-fold-nav li a:link, .above-fold-nav li a:visited {
           padding: 0;
-          font-family: "MarkOT-Heavy", sans-serif;
+          font-family: "FFMarkWebProBold", sans-serif;
           color: white;
           z-index: 2;
           text-transform: uppercase;
           font-size: 0.8em;
           display: inline-block;
-          line-height: 45px; }
+          line-height: 30px; }
         .above-fold-nav li a::before {
           content: "\f18e";
           font-family: fontAwesome;
           float: right;
           color: white;
-          font-size: 14pt;
+          font-size: 15px;
           padding: 0 20px 0 10px; }
         .above-fold-nav li a::after {
-          display: none; }
-        .above-fold-nav li a:hover, .above-fold-nav li a:active, .above-fold-nav li a:focus {
+          content: " ";
+          background: #71C5E8;
+          width: 0;
+          height: 3px;
+          display: block;
+          transition: all ease-in-out 0.4s; }
+        .above-fold-nav li a:hover::before, .above-fold-nav li a:active::before, .above-fold-nav li a:focus::before {
           color: #71C5E8; }
-          .above-fold-nav li a:hover::after, .above-fold-nav li a:active::after, .above-fold-nav li a:focus::after {
-            opacity: 1; } }
+        .above-fold-nav li a:hover::after, .above-fold-nav li a:active::after, .above-fold-nav li a:focus::after {
+          width: 100%; } }
 
 .no-background {
   background: rgba(1, 1, 1, 0); }
@@ -2838,12 +2877,11 @@ li.nav-logo {
 .background {
   background: #010101; }
 
-li.title {
-  font-family: "MarkOT-Heavy", sans-serif;
+h3.nav-title {
+  font-family: "FFMarkWebProBold", sans-serif;
   text-transform: uppercase;
-  color: white;
-  font-size: 1.2em;
-  margin: 0 0 10px 0; }
+  margin: 0 0 10px 0;
+  color: #FFFFFF; }
 
 /* --------------------------------
 
@@ -2930,7 +2968,7 @@ Main components
 .cd-primary-nav-trigger {
   height: 100%;
   width: 50px;
-  font-family: "MarkOT-Heavy", sans-serif; }
+  font-family: "FFMarkWebProBold", sans-serif; }
   .cd-primary-nav-trigger::before {
     content: "\f0c9";
     font-family: fontAwesome;
@@ -2939,7 +2977,7 @@ Main components
     margin: 0 10px 0 0; }
   .cd-primary-nav-trigger::after {
     content: "Cineplex brand guide";
-    font-family: "MarkOT-Heavy", sans-serif;
+    font-family: "FFMarkWebProBold", sans-serif;
     color: white;
     text-transform: uppercase; }
     @media screen and (min-width: 20em) {
@@ -2996,11 +3034,9 @@ Main components
   padding: 50px 0;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
+  overflow: auto;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  overflow: auto;
   /* this fixes the buggy scrolling on webkit browsers - mobile devices only - when overflow property is applied */
   -webkit-overflow-scrolling: touch;
   -webkit-transform: translateY(-100%);
@@ -3014,6 +3050,19 @@ Main components
   -webkit-transition-duration: 0.6s;
   -moz-transition-duration: 0.6s;
   transition-duration: 0.6s; }
+  @media screen and (min-width: 20em) {
+    .cd-primary-nav {
+      justify-content: flex-end;
+      align-items: stretch;
+      padding: 0 25px 25px 25px; } }
+  @media screen and (min-width: 720px) {
+    .cd-primary-nav {
+      justify-content: center;
+      align-items: center; } }
+  @media screen and (min-width: 60em) {
+    .cd-primary-nav {
+      justify-content: center;
+      align-items: center; } }
   .cd-primary-nav.is-visible {
     -webkit-transform: translateY(0);
     -moz-transform: translateY(0);
@@ -3030,22 +3079,6 @@ Main components
     .cd-primary-nav .cd-label {
       font-size: 16px;
       font-size: 1rem; } }
-
-.cd-intro {
-  position: relative;
-  height: 100%;
-  background: url("../img/cd-background-img.jpg") no-repeat center center;
-  background-size: cover;
-  z-index: 1;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale; }
-  @media only screen and (min-width: 768px) {
-    .cd-intro h1 {
-      font-size: 30px;
-      font-size: 1.875rem; } }
-  @media only screen and (min-width: 1170px) {
-    .cd-intro {
-      height: 700px; } }
 
 .cd-main-content {
   position: relative;
@@ -3277,7 +3310,7 @@ section {
     transition: all ease-in-out 0.4s;
     bottom: 0;
     position: absolute;
-    font-family: "MarkOT-Heavy", sans-serif;
+    font-family: "FFMarkWebProBold", sans-serif;
     padding: 0 0 10px 0; }
   .colour-list .colour {
     width: 150px;
@@ -3357,7 +3390,7 @@ section .col-4 {
 
 @media screen and (min-width: 60em) {
   .page-title {
-    margin-bottom: 75px; } }
+    margin-bottom: 20px; } }
 
 @media screen and (min-width: 20em) {
   .blueprint .col-4 {
@@ -3726,18 +3759,6 @@ footer {
 .border {
   border: 1px solid #A7A8AA; }
 
-a.cta-down i {
-  font-size: 22pt; }
-
-a.cta-down:link, a.cta-down:visited {
-  color: #FFFFFF;
-  position: absolute;
-  bottom: 50px;
-  transition: all ease-in-out 0.4s; }
-
-a.cta-down:hover, a.cta-down:active, a.cta-down:focus {
-  color: #71C5E8; }
-
 @media screen and (min-width: 20em) {
   #framework {
     display: none; } }
@@ -3968,7 +3989,7 @@ Main Components
     color: white; }
   .cd-title p {
     font-size: 1.4rem;
-    font-family: "MarkOT-Extralight", sans-serif;
+    font-family: "FFMarkWebPro", sans-serif;
     font-style: italic;
     line-height: 1.2;
     padding: .4em 2em;
@@ -4290,7 +4311,7 @@ Main Components
       text-align: left;
       background: #71C5E8;
       color: white;
-      font-family: "MarkOT-Heavy", sans-serif;
+      font-family: "FFMarkWebProBold", sans-serif;
       text-transform: uppercase;
       line-height: 3;
       padding: 0 15px;
