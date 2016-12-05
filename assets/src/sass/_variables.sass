@@ -41,3 +41,9 @@ $fg-gutter: $gutter
         margin-right: flex-gutter()
     &:nth-child(#{$nth}+1)
         clear: none
+
+
+@mixin calc($property, $expression)
+    #{$property}: -moz-calc(#{$expression})
+    #{$property}: -webkit-calc(#{$expression})
+    #{$property}: calc(#{$expression})

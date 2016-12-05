@@ -43,6 +43,7 @@
       <header class="cd-header">
           <nav class="p-nav">
               <ul>
+                  <!-- <li class="logo"><img src="assets/img/logos/cineplex_logo_en_ko_rgb.svg" /></li> -->
                   <li>
                       <a class="cd-primary-nav-trigger" href="javascript:void(0)">
                       </a> <!-- cd-primary-nav-trigger -->
@@ -51,9 +52,9 @@
           </nav>
           <nav class="s-nav">
               <ul>
-                  <li><a href="#primary" >Primary Colours</a></li>
-                  <li><a href="#secondary" >Secondary Colours</a></li>
-                  <li><a href="#gradients" >Gradient Guidelines</a></li>
+                  <li><a href="#primary" class="scroll">Primary Colours</a></li>
+                  <li><a href="#secondary" class="scroll">Secondary Colours</a></li>
+                  <li><a href="#gradients" class="scroll">Gradient Guidelines</a></li>
               </ul>
           </nav>
       </header>
@@ -134,7 +135,7 @@
       </nav>
       <main class="cd-main-content">
 
-        <section id="js-parallax-window" class="brand parallax-window">
+        <section id="js-parallax-window" class="colours parallax-window">
 
             <div class="parallax-static-content">
                 <div class="content align-columns">
@@ -148,7 +149,7 @@
                             </li><li>
                                 <a href="#spacing" class="scroll">Spacing</a>
                             </li><li>
-                                <a href="#" class="scroll">Dos and Don'ts</a>
+                                <a href="#" class="scroll">Gradients</a>
                             </li>
                         </ul>
                     </div>
@@ -157,7 +158,11 @@
 
             </div>
 
-            <div id="js-parallax-background" class="parallax-background"></div>
+            <div class="video">
+                <video id="bgvid" playsinline autoplay muted>
+                    <source src="assets/video/cineplexlogo.mp4" type="video/mp4">
+                </video>
+            </div>
 
         </section>
 
@@ -624,6 +629,7 @@
 
     </main>
 
+
     <div class="modal">
 
         <input class="modal-state" id="modal-white" type="checkbox" />
@@ -887,7 +893,6 @@
             </div>
         </div>
     </div>
-
 
     <footer>
         <div class="container">

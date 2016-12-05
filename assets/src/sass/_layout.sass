@@ -48,6 +48,7 @@ main
 	z-index: $content-zindex
     position: relative
 
+
 nav
     z-index: 99999999999999
 
@@ -56,6 +57,7 @@ section
     z-index: $section-zindex
     position: relative
     min-height: 100vh
+    padding: 100px 0
 
 .pad-top
     padding-top: 100px
@@ -226,27 +228,29 @@ section
             @include omega(3n)
 
 .colours-wrap
-    display: flex
     width: 100%
-    @include media($mobile)
-        flex-wrap: wrap
-    @include media($tablet)
-        flex-wrap: wrap
-    @include media($desktop)
-        flex-wrap: nowrap
+
+    .content
+        margin: 160px 0 0 0
+        background: #F1F1F1
+        padding: 15px
+        text-align: left
+        @include outer-container()
+
+    .col-6
+        &:last-child
+            text-align: right
+    p
+        margin: 0
+        color: $black
+    h4
+        color: $black
+        font-size: 12pt
+
     li
-        display: inline-flex
-        justify-content: center
-        align-items: center
-        color: #FFFFFF
-        padding: 50px 15px
-        transition: all ease-in-out 0.5s
-        @include media($mobile)
-            width: 100%
-        @include media($tablet)
-            width: 50%
-        @include media($desktop)
-            width: 100%
+        @include span-columns(4)
+        @include omega(3n)
+
 
 .colours-wrap.secondary
     @include media($mobile)
@@ -310,3 +314,13 @@ ul.masonry-container
         padding:  0
         width:  100%
         background:  #efefef
+
+.photoshoot
+    .col-6
+        @include omega(2n)
+        margin-bottom: 2%
+
+.timeplay
+    .logos
+        .col-6
+            @include omega(2n)

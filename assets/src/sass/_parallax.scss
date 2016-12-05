@@ -80,7 +80,7 @@ $parallax-background-height: $parallax-window-height * 2;
 
 .designbestpractices {
     .parallax-background {
-        background: url("../img/designbestpractices.jpg");
+        background: url("../img/design-bg.jpg");
         background-position: center;
         background-size: cover;
     }
@@ -88,7 +88,7 @@ $parallax-background-height: $parallax-window-height * 2;
 
 .ps-gaming {
     .parallax-background {
-        background: url("../img/gaming.jpg");
+        background: url("../img/xscape-bg.jpg");
         background-position: center;
         background-size: cover;
     }
@@ -102,9 +102,9 @@ $parallax-background-height: $parallax-window-height * 2;
     }
 }
 
-.ps-exhibition {
+.exhibition {
     .parallax-background {
-        background: url("../img/ps-exhibition-bg.jpg");
+        background: url("../img/exhibition-logos-bg.jpg");
         background-position: center;
         background-size: cover;
     }
@@ -113,6 +113,14 @@ $parallax-background-height: $parallax-window-height * 2;
 .theatrical {
     .parallax-background {
         background: url("../img/theatrical-logos-bg.jpg");
+        background-position: center;
+        background-size: cover;
+    }
+}
+
+.brand {
+    .parallax-background {
+        background: url("../img/brand-logos-bg.jpg");
         background-position: center;
         background-size: cover;
     }

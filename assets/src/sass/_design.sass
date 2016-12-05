@@ -55,6 +55,14 @@
 footer
     background: $black
     padding: 50px 0
+    color: white
+    .container
+        display: flex
+    ul.col-4
+        border-right: 1px solid rgba(255,255,255,0.2)
+        &:last-child
+            border-right: 0
+
 .alert
     text-align: left
     color: #FFFFFF
@@ -78,6 +86,7 @@ footer
 .consider
     background: $gold
     color: $black
+
 
 
 .alert-1
@@ -117,8 +126,7 @@ footer
 
 .consumer-blue
     background: $consumer-blue
-    .caption, &::before, h1, h2, h3, h4, h5, h6, p, ul, li
-        color: #FFFFFF
+
 
 .corporate-blue
     background: $corporate-blue
@@ -215,3 +223,8 @@ footer
 
     @include media($desktop)
         display: block
+
+footer
+
+    .logo
+        width: 200px
