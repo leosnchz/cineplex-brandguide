@@ -57,7 +57,9 @@ section
     z-index: $section-zindex
     position: relative
     min-height: 100vh
-    padding: 100px 0
+    .col-4
+        text-align: left
+        @include omega(3n+1)
 
 .pad-top
     padding-top: 100px
@@ -79,6 +81,7 @@ section
     min-height: 100vh
     align-items: center
     justify-content: center
+    width: 100vw
 
 .align-columns
     display: flex
@@ -176,7 +179,7 @@ section
 
 
 .section-padding
-    @include pad(80px 0)
+    @include pad(100px 0)
 
 .heading-pad
     @include pad(30px 0 15px 0)
@@ -192,10 +195,6 @@ section
     top: 0
     width: 100%
 
-section
-    .col-4
-        text-align: left
-        @include omega(3n+1)
 
 .about
     .col-6
@@ -229,10 +228,9 @@ section
 
 .colours-wrap
     width: 100%
-
     .content
         margin: 160px 0 0 0
-        background: #F1F1F1
+        background: #FFFFFF
         padding: 15px
         text-align: left
         @include outer-container()
@@ -250,6 +248,7 @@ section
     li
         @include span-columns(4)
         @include omega(3n)
+        border: 2px solid #FFFFFF
 
 
 .colours-wrap.secondary
@@ -324,3 +323,34 @@ ul.masonry-container
     .logos
         .col-6
             @include omega(2n)
+
+.modal
+    .dashboard
+        color: black
+        width: 100%
+        text-align: center
+        background: black
+        position: absolute
+        top: 0
+        padding: 25px
+        a
+            &:link, &:visited
+                font-size: 10pt
+                display: inline-block
+                color: #FFFFFF
+                font-family: $markotreg
+                text-transform: uppercase
+
+            &:before
+                content: "\f0ed"
+                font-family: fontAwesome
+                display: inline-block
+                color: #FFFFFF
+                margin: 0 20px 0 0
+
+    .colour-name
+        color: #FFFFFF
+        text-align: left
+        font-size: 10pt
+        margin: 0
+        padding: 0

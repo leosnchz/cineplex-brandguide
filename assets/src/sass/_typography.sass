@@ -6,19 +6,18 @@ h1, h2, h3, h4, h5, h6
     text-transform: uppercase
 
 h2.section-title
-    font-size: 2.2em
     font-family: $markotbold
-    font-weight: 300
     text-align: center
     color: $consumer-blue
-    &::after
-        content: " "
-        width: 10px
-        height: 2px
-        background: $light-silver
-        margin: 20px auto
-        display: block
-
+    padding: 0 0 50px 0
+    @include media($mobile)
+        font-size: 18pt
+    @include media($tablet)
+        font-size: 24pt
+    @include media($desktop)
+        font-size: 28pt
+h4
+    padding: 0 0 20px 0
 
 ul, li
     padding: 0
@@ -41,6 +40,7 @@ a
         font-family: $markotbold
         color: $consumer-blue
         transition: all ease-in-out 0.4s
+        cursor: pointer
     &:hover, &:active, &:focus
         color: $orange
 
@@ -69,12 +69,12 @@ footer
         padding: 0
     a
         &:link, &:visited
-            color: $light-silver
+            color: $orange
             text-decoration: none
             line-height: 1.8em
             transition: all ease-in-out 0.4s
         &:hover, &:active, &:focus
-            color: $gold
+            color: $light-silver
 
 
 ul.wrong-list
@@ -130,17 +130,20 @@ ul.right-list
             font-size: 3em
     h3
         font-family: $markotreg
+        letter-spacing: 0.25em
+
         @include media($mobile)
-            font-size: 0.7em
+            font-size: 10pt
         @include media($tablet)
-            font-size: 1em
+            font-size: 10pt
         @include media($desktop)
-            font-size: 1.5em
+            font-size: 10pt
             margin: 5px 0 0 0
 
     h1
         text-transform: uppercase
         font-weight: normal
+        letter-spacing: 0.001em
         @include media($desktop)
             font-size: 40pt
 .align-c
@@ -243,38 +246,38 @@ ul.right-list
     text-align: center
 
 .approval
+    background: url("../img/approval-bg.jpg")
+    background-size: cover
+    background-position: top center
+    background-attachment: fixed
+    color: white
     h2
         color: white
     h3
-        color: $dark-silver
-        &:after
-            content: " "
-            height: 2px
-            width: 10px
-            background: $dark-silver
-            margin: 20px auto
-            display: block
-    .col-6
-        background: white
-        border-radius: 10px
-        padding: 30px 0
+        color: white
         &:first-child
             margin-bottom: 40px
     h3
         margin-bottom: 20px
+
+.dashed-border-r
+    border-right: 3px dashed rgba(255,255,255,0.4)
 
 .steps
     display: block
     text-align: center
     display: flex
     flex-direction: column
+    align-items: center
+    justify-content: center
+
     li
 
         &::after
             font-family: fontAwesome
             content: "\f063"
-            color: $light-silver
-            font-size: 30px
+            color: rgba(255,255,255,1)
+            font-size: 15px
             display: inline
             margin: 20px 0
         &:last-child
@@ -282,32 +285,32 @@ ul.right-list
                 display: none
     p
         text-transform: uppercase
-        font-weight: 700
-        font-size: 10pt
+        font-size: 12pt
         padding: 0
-        margin: 20px 0
+        margin: 10px 0
         text-align: center
-        color: $dark-silver
+        color: white
         display: block
         border-radius: 10px
 
 
 
-
     i.fa
-        font-size: 30pt
+        font-size: 50pt
         padding: 0 0 10px 0
 
     span
         display: block
         padding: 0 15px
-        font-family: $markotbold
+        font-family: $markotreg
+        font-size: 10pt
 
 .xscape
     color: #FFFFFF
 
 
 a.cta-down
+    width: 100%
     i
         font-size: 22pt
     &:link, &:visited
@@ -322,3 +325,52 @@ a.cta-down
         bottom: 25px
     @include media($desktop)
         bottom: 50px
+
+
+.architecture
+    p
+        text-align: center
+        margin-bottom: 20px
+
+.text-red
+    color: $red
+
+.text-green
+    color: $green
+
+.text-white
+    color: #FFFFFF
+
+.text-centered
+    text-align: center
+
+.consumer-blue
+    h2.section-title
+        color: #FFFFFF
+
+.btn-view
+    color: $consumer-blue
+    font-family: $markotbold
+    cursor: pointer
+    transition: all ease-in-out 0.4s
+    transition-delay: 0
+    &:hover, &:active, &:focus
+        color: $orange
+
+.subheading
+    font-family: $markotreg
+    text-transform: uppercase
+    padding: 50px 0
+
+.caption-close
+    font-family: $markotreg
+    font-size: 10pt
+    text-align: center
+
+.align-right
+    text-align: right
+
+.gradient-container
+    .col-4
+        color: $black !important
+        font-family: $markotreg !important

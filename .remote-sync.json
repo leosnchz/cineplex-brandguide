@@ -1,0 +1,15 @@
+{
+  "transport": "ftp",
+  "uploadOnSave": true,
+  "useAtomicWrites": true,
+  "deleteLocal": false,
+  "hostname": "hccbsrv01.alpha.cglp.ca",
+  "target": "brandguide",
+  "ignore": [
+    ".remote-sync.json",
+    ".git/**"
+  ],
+  "username": "lsanchez",
+  "password": "Snowden@2016",
+  "watch": []
+}

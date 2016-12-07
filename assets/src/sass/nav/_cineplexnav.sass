@@ -34,7 +34,7 @@
             border-bottom: none
         @include media($desktop)
             font-size: 14pt
-            line-height: 30pt
+            line-height: 20pt
 
     a
         &:link, &:visited
@@ -43,6 +43,7 @@
             text-transform: uppercase
             transition: all ease-in-out 0.4s
             font-family: $markotbold
+
 
 
 .p-nav
@@ -66,13 +67,6 @@
             transition: all ease-in-out 0.4s
             line-height: 1.9
             font-family: $markotbold
-    //
-    //
-    //
-    //
-    // .nav-logo-category
-    //     @include span-columns(6)
-    //     @include omega(2n)
 
 .vertical-tabs
     ul
@@ -169,12 +163,13 @@ li.nav-logo
             a
                 &:link, &:visited
                     font-family: $markotbold
-                    font-size: 0.8em
+                    font-size: 18pt
                     text-transform: uppercase
                     height: 100%
                     display: block
                     line-height: 40px
                     background: transparent
+                    letter-spacing: 0.02em
                     @include pad(0)
 
 
@@ -191,7 +186,7 @@ li.nav-logo
             display: block
             overflow: hidden
             padding: 0
-            margin: 0 1px 0 0
+            margin: 0
             border-bottom: 0
 
             &:last-child
@@ -203,33 +198,33 @@ li.nav-logo
                     color: white
                     z-index: 2
                     text-transform: uppercase
-                    font-size: 0.8em
-                    display: inline-block
-                    line-height: 30px
-
+                    font-size: 12pt
+                    line-height: 22pt
+                    padding: 3px 0
                 &::before
                     content: "\f18e"
                     font-family: fontAwesome
-                    float: right
-                    color: white
+                    float: left
                     font-size: 15px
-                    padding: 0 0 0 10px
-                    transition: all ease-in-out 0.3s
-                    transition-delay: 0.3s
+                    padding: 0 10px 0 0
 
-                &::after
-                    content: " "
-                    background: $sky-blue
-                    width: 0
-                    height: 3px
-                    display: block
-                    transition: all ease-in-out 0.4s
+            &:hover, &:active, &:focus
+                a
+                    &:link, &:visited
 
-                &:hover, &:active, &:focus
-                    &::before
                         color: $sky-blue
-                    &::after
-                        @include calc( width, '100% - 23px')
+
+
+
+
+            &:last-child
+                a
+                    border-bottom: 0
+
+
+
+
+
 
 .no-background
 	background: rgba(1,1,1,0)

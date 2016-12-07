@@ -1,8 +1,8 @@
 .home, .knowcineplex
     text-align: center
-    flex-direction: column
     .logo
         width: 100%
+        margin: 0 auto
         @include media($mobile)
             max-width: 400px
             @include pad(0 35px)
@@ -29,14 +29,12 @@
             color: $gold
 
     .cta
-        align-self: center
-        position: absolute
         bottom: 100px
-        &::before
-            content: " "
-            display: block
-            width: 100%
-            margin: 30px 0 0 0
+        position: absolute
+        margin: 0 auto
+        right: 0
+        width: 100%
+
 
 .white-bg
     background: #FFFFFF
@@ -66,7 +64,7 @@ footer
 .alert
     text-align: left
     color: #FFFFFF
-    padding: 3% 0
+    padding: 0
 
     i
         font-size: 80pt
@@ -116,13 +114,14 @@ footer
         i.fa
             color: $gold
 
-.colours
-    background: #F1f1f1
-
 .white
     background: #FFFFFF
     .caption, &::before
         color: $dark-silver
+
+.light-gray-bg
+    background: #f0f0f0
+
 
 .consumer-blue
     background: $consumer-blue
@@ -228,3 +227,59 @@ footer
 
     .logo
         width: 200px
+
+
+.easyzoom
+    position: relative
+    display: inline-block
+    border-right: 5px solid $sky-blue
+    border-bottom: 5px solid $sky-blue
+    border-left: 5px solid $sky-blue
+    transition: all ease-in-out 0.4s
+    &:hover, &:active, &:focus
+        border-right: 5px solid $black
+        border-bottom: 5px solid $black
+        border-left: 5px solid $black
+        .caption
+            background: $black
+            &::before
+                content: "\f010"
+            &::after
+                content: "Roll out of image to zoom out"
+
+
+    .caption
+        position: absolute
+        top: 0
+        margin: 0 auto
+        width: 100%
+        background: $sky-blue
+        color: white
+        padding: 10px
+        margin: 0
+        display: inline
+        z-index: 999
+        transition: all ease-in-out 0.4s
+        display: block
+        text-align: center
+        &::before
+            content: "\f002"
+            font-family: fontAwesome
+            float: none
+            color: white
+            display: inline
+            margin-right: 5px
+            padding-right: 5px
+            border-right: 1px solid rgba(255,255,255,0.3)
+            font-size: 7pt
+
+        &::after
+            content: "Roll over image to zoom in"
+            font-family: $markotreg
+            text-transform: uppercase
+            font-size: 7pt
+            letter-spacing: 0.08em
+
+.logo-spacing
+    img
+        border: 15px solid white
