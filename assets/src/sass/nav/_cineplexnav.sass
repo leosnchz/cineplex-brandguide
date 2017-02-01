@@ -15,7 +15,7 @@
             z-index: -1
             position: absolute
 
-        &:hover, &:active, &:focus
+        &:hover, &:active
             a
                 &:link, &:visited
                     color: white
@@ -24,17 +24,27 @@
                 background: $sky-blue
                 left: 0
         @include media($mobile)
-            border-bottom: 1px solid rgba(255,255,255,0.3)
+            border-bottom: 0
             text-align: left
-            line-height: 33px
-            font-size: 10pt
+            margin: 0 0 0 0
+            padding: 0 0 0 0
+            border-bottom: 1px solid rgba(255,255,255,0.3)
             &:last-child
                 border-bottom: none
+            a
+                &:link, &:visited
+                    line-height: 25px
+                    font-size: 9pt
         @include media($tablet)
             border-bottom: none
+            line-height: 25px
+            padding: 0
+            margin: 0
         @include media($desktop)
             font-size: 14pt
-            line-height: 20pt
+            line-height: 25pt
+            padding: 0
+            margin: 0
 
     a
         &:link, &:visited
@@ -146,7 +156,7 @@ li.nav-logo
 .above-fold-nav
     max-width: 80%
     @include media($mobile)
-        width: 100%
+        width: 80%
         position: absolute
         bottom: 80px
         margin: 0 auto
@@ -163,21 +173,22 @@ li.nav-logo
             a
                 &:link, &:visited
                     font-family: $markotbold
-                    font-size: 18pt
                     text-transform: uppercase
                     height: 100%
                     display: block
-                    line-height: 40px
                     background: transparent
                     letter-spacing: 0.02em
-                    @include pad(0)
-
+                    font-size: 10pt
+                    @include pad(5px 0)
+                    color: white
+                &:hover, &:active
+                    color: $sky-blue
 
     @include media($desktop)
         position: static
         text-align: left
         padding: 0
-        margin: 0
+        margin: 20px 0 0 0
         .col-4
             @include span-columns(4)
         ul
@@ -211,7 +222,6 @@ li.nav-logo
             &:hover, &:active, &:focus
                 a
                     &:link, &:visited
-
                         color: $sky-blue
 
 
@@ -239,3 +249,13 @@ h3.nav-title
     text-transform: uppercase
     margin: 0 0 10px 0
     color: #FFFFFF
+
+.nav-sec-title
+    p
+        font-family: $markotreg
+        color: #FFFFFF
+        text-transform: uppercase
+        margin: 15px 0 10px 0
+        font-size: 10pt
+        letter-spacing: 0.2em
+        display: inline-block

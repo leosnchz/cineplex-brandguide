@@ -1,6 +1,4 @@
-
-
-h1, h2, h3, h4, h5, h6
+h1, h2, h3, h4, h5, h6, th
     margin: 0
     font-family: $markotbold
     text-transform: uppercase
@@ -9,13 +7,16 @@ h2.section-title
     font-family: $markotbold
     text-align: center
     color: $consumer-blue
-    padding: 0 0 50px 0
+
     @include media($mobile)
         font-size: 18pt
+        padding: 0
     @include media($tablet)
         font-size: 24pt
+        padding: 0 0 20px 0
     @include media($desktop)
         font-size: 28pt
+        padding: 0 0 50px 0
 h4
     padding: 0 0 20px 0
 
@@ -44,6 +45,17 @@ a
     &:hover, &:active, &:focus
         color: $orange
 
+a.light-link
+    &:link, &:visited
+        text-decoration: none
+        font-family: $markotbold
+        color: $sky-blue
+        transition: all ease-in-out 0.4s
+        cursor: pointer
+    &:hover, &:active, &:focus
+        color: $orange
+
+
 .black-bg
     text-align: center
     h2
@@ -57,16 +69,26 @@ table
 
 footer
     ul
-        text-align: left
         margin: 0
         padding: 0
     li
-        text-align: left
         list-style: none
+        @include media($mobile)
+            text-align: center
+        @include media($tablet)
+            text-align: left
+        @include media($desktop)
+            text-align: left
     h3
         color: white
-        margin: 0 0 15px 0
         padding: 0
+        @include media($mobile)
+            margin: 0 0 0 0
+        @include media($tablet)
+            margin: 0 0 15px 0
+        @include media($desktop)
+            margin: 0 0 15px 0
+
     a
         &:link, &:visited
             color: $orange
@@ -121,7 +143,7 @@ ul.right-list
     h2
         text-transform: uppercase
         @include media($mobile)
-            font-size: 2em
+            font-size: 14pt
             line-height: 1em
             padding: 0 0 10px 0
         @include media($tablet)
@@ -130,15 +152,18 @@ ul.right-list
             font-size: 3em
     h3
         font-family: $markotreg
-        letter-spacing: 0.25em
 
         @include media($mobile)
-            font-size: 10pt
+            font-size: 7pt
+            letter-spacing: 0.1em
+            margin: 10px 0 0 0
         @include media($tablet)
             font-size: 10pt
+            letter-spacing: 0.25em
         @include media($desktop)
             font-size: 10pt
             margin: 5px 0 0 0
+            letter-spacing: 0.25em
 
     h1
         text-transform: uppercase
@@ -181,9 +206,6 @@ ul.right-list
                 opacity: 0.2
 
 .colours-wrap
-    h4
-        text-transform: uppercase
-        font-size: 10pt
     li
         color: #FFFFFF
         text-align: center
@@ -192,7 +214,8 @@ ul.right-list
         font-size: 0.8em
 
     h4
-        &::after
+        text-transform: uppercase
+        font-size: 9pt !important
 
     .gold, .light-silver
         color: $black
@@ -362,10 +385,11 @@ a.cta-down
     text-transform: uppercase
     padding: 50px 0
 
-.caption-close
-    font-family: $markotreg
-    font-size: 10pt
-    text-align: center
+.caption
+    p
+        font-family: $markotreg
+        font-size: 10pt
+        text-align: center
 
 .align-right
     text-align: right
@@ -374,3 +398,52 @@ a.cta-down
     .col-4
         color: $black !important
         font-family: $markotreg !important
+
+.xscape, .dsr
+    .section-title
+        color: #FFFFFF
+
+.typefaces
+    h1, h2, h3, h4, h5, h6
+        text-transform: none
+
+#framework
+    h3
+        margin-top: 15px
+
+.specimen
+    padding: 45px
+    margin-bottom: 25px
+
+a.btn-download
+    background: $consumer-blue
+    color: white
+    text-align: center
+    padding: 10px 20px
+    display: inline-flex
+    line-height: 22pt
+    &:before
+        font-family: fontAwesome
+        content: "\f0ed"
+        display: inline-block
+        font-size: 22pt
+        padding-right: 10px
+        margin-right: 10px
+        border-right: 1px solid rgba(255,255,255,0.2)
+    &:hover, &:active, &:focus
+        background: $orange
+
+.no-padding
+    padding: 0
+
+.modal
+    h3
+        @include media($mobile)
+            text-align: center
+            margin: 25px 0 15px 0
+        @include media($tablet)
+            text-align: left
+            margin: 25px 0 15px 0
+        @include media($desktop)
+            text-align: left
+            margin: 25px 0 15px 0

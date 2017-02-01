@@ -111,7 +111,7 @@ video#bgvid {
 }
 
 .grid-items-lines {
-  $base-background-color: white !default;
+  $base-background-color: transparent !default;
   $dark-gray: #333 !default;
   $light-gray: #DDD !default;
   $medium-screen: 40em !default;
@@ -122,8 +122,9 @@ video#bgvid {
   $grid-item-border: 1px solid transparentize($base-font-color, 0.8);
   $grid-item-columns: 4;
   $grid-item-big-columns: 8;
+  $grid-item-full-columns: 12;
   $grid-item-color: $base-font-color;
-  $grid-item-height: 14em;
+  $grid-item-height: 15em;
 
   @include clearfix;
   position: relative;
@@ -132,12 +133,11 @@ video#bgvid {
     background: $grid-item-background;
     border-bottom: $grid-item-border;
     border-right: $grid-item-border;
-    cursor: pointer;
     float: left;
     height: $grid-item-height;
     outline: none;
     overflow: hidden;
-    padding: 2em;
+    padding: 1.5em;
     text-decoration: none;
     transition: all 0.2s ease-in-out;
     width: 100%;
@@ -146,10 +146,6 @@ video#bgvid {
       @include grid-item-columns($grid-item-columns);
     }
 
-    &:focus,
-    &:hover {
-      background: transparentize($grid-item-color, 0.95);
-    }
   }
 
   .grid-item img {
@@ -167,7 +163,8 @@ video#bgvid {
 
   .grid-item p {
       color: transparentize($grid-item-color, 0.4);
-      line-height: 1.5em;
+      line-height: 1.4em;
+      font-size: 10pt;
 
       @include media($medium-screen) {
         max-width: 95%;
@@ -177,6 +174,17 @@ video#bgvid {
   .grid-item-big {
     @include media($large-screen) {
       @include grid-item-columns($grid-item-big-columns);
+    }
+    p {
+      @include media($medium-screen) {
+        max-width: 95%;
+      }
+    }
+  }
+
+  .grid-item-big-1 {
+    @include media($large-screen) {
+      @include grid-item-columns($grid-item-full-columns);
     }
     p {
       @include media($medium-screen) {
@@ -272,4 +280,69 @@ video#bgvid {
 	width: 100%;
 	height: 100%;
 	margin-left: 20px;
+}
+
+.cd-top {
+	display: inline-block;
+	height: 40px;
+	width: 40px;
+
+	position: fixed;
+	bottom: 40px;
+	right: 10px;
+    z-index: 99999999;
+
+	box-shadow: 0 0 10px rgba(#000, .09);
+
+	/* image replacement properties */
+	overflow: hidden;
+	text-indent: 100%;
+	white-space: nowrap;
+
+	background: rgba($sky-blue,0.9) url(../img/cd-top-arrow.svg) no-repeat center 50%;
+
+	visibility: hidden;
+	opacity: 0;
+
+	-webkit-transition: opacity .3s 0s, visibility 0s .3s;
+	-moz-transition: opacity .3s 0s, visibility 0s .3s;
+	transition: opacity .3s 0s, visibility 0s .3s;
+
+    &:after {
+        content: "hello";
+    }
+
+	&.cd-is-visible, &.cd-fade-out, .no-touch &:hover {
+		-webkit-transition: opacity .3s 0s, visibility 0s 0s;
+		-moz-transition: opacity .3s 0s, visibility 0s 0s;
+		transition: opacity .3s 0s, visibility 0s 0s;
+	}
+
+	&.cd-is-visible { /* the button becomes visible */
+		visibility: visible;
+		opacity: 1;
+	}
+
+	&.cd-fade-out { /* if the user keeps scrolling down, the button is out of focus and becomes less visible */
+		opacity: .5;
+	}
+
+	.no-touch &:hover {
+		background-color: rgba($sky-blue,1);
+		opacity: 1;
+	}
+
+
+
+	@include MQ(M) {
+		right: 20px;
+		bottom: 20px;
+	}
+
+	@include MQ(L) {
+		height: 60px;
+		width: 60px;
+		right: 30px;
+		bottom: 30px;
+	}
 }

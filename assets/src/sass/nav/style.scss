@@ -26,7 +26,7 @@ Main components
 	left: 0;
 	height: $header-height-M;
 	width: 100%;
-	z-index: $hamburger-zindex;
+	z-index: $nav-zindex;
 	transition: all ease-in-out 0.4s;
 	@include pad(0 15px);
 	@include font-smoothing;
@@ -180,7 +180,7 @@ Main components
     }
     @include media($desktop) {
     	justify-content: center;
-    	align-items: center;;
+    	align-items: center;
     }
 
 
@@ -212,4 +212,5 @@ Main components
 .cd-main-content {
 	position: relative;
 	z-index: $content-zindex;
+    background: white;
 }

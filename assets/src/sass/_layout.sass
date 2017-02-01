@@ -1,37 +1,92 @@
 // layout
 
 .col-2
-    @include span-columns(2)
+    @include media($mobile)
+        @include span-columns(12)
+    @include media($tablet)
+        @include span-columns(2)
+    @include media($desktop)
+        @include span-columns(2)
 
 .col-3
-    @include span-columns(3)
+    @include media($mobile)
+        @include span-columns(12)
+    @include media($tablet)
+        @include span-columns(3)
+    @include media($desktop)
+        @include span-columns(3)
 
 .col-4
-    @include span-columns(4)
+    @include media($mobile)
+        @include span-columns(12)
+    @include media($tablet)
+        @include span-columns(4)
+    @include media($desktop)
+        @include span-columns(4)
 
 .col-5
-    @include span-columns(5)
+    @include media($mobile)
+        @include span-columns(12)
+    @include media($tablet)
+        @include span-columns(5)
+    @include media($desktop)
+        @include span-columns(5)
 
 .col-6
-    @include span-columns(6)
+    @include media($mobile)
+        @include span-columns(12)
+    @include media($tablet)
+        @include span-columns(6)
+    @include media($desktop)
+        @include span-columns(6)
 
 .col-7
-    @include span-columns(7)
+    @include media($mobile)
+        @include span-columns(12)
+    @include media($tablet)
+        @include span-columns(7)
+    @include media($desktop)
+        @include span-columns(7)
 
 .col-8
-    @include span-columns(8)
+    @include media($mobile)
+        @include span-columns(12)
+    @include media($tablet)
+        @include span-columns(8)
+    @include media($desktop)
+        @include span-columns(8)
 
 .col-9
-    @include span-columns(9)
+    @include media($mobile)
+        @include span-columns(12)
+    @include media($tablet)
+        @include span-columns(9)
+    @include media($desktop)
+        @include span-columns(9)
 
 .col-10
-    @include span-columns(10)
+    @include media($mobile)
+        @include span-columns(12)
+    @include media($tablet)
+        @include span-columns(10)
+    @include media($desktop)
+        @include span-columns(10)
 
 .col-11
-    @include span-columns(11)
+    @include media($mobile)
+        @include span-columns(12)
+    @include media($tablet)
+        @include span-columns(11)
+    @include media($desktop)
+        @include span-columns(11)
 
 .col-12
-    @include span-columns(12)
+    @include media($mobile)
+        @include span-columns(12)
+    @include media($tablet)
+        @include span-columns(12)
+    @include media($desktop)
+        @include span-columns(12)
 
 img
     width: 100%
@@ -56,7 +111,6 @@ section
     width: 100%
     z-index: $section-zindex
     position: relative
-    min-height: 100vh
     .col-4
         text-align: left
         @include omega(3n+1)
@@ -72,9 +126,11 @@ section
     display: block
 
 .container
-    @include outer-container()
+    @include outer-container(960px)
     @include media($mobile)
-        @include pad(35px)
+        @include pad(10px 25px)
+    @include media($tablet)
+        @include pad(10px 25px)
 
 .aligner
     display: flex
@@ -86,6 +142,14 @@ section
 .align-columns
     display: flex
     min-height: 100vh
+    align-items: center
+    justify-content: center
+    flex-direction: column
+    .container
+        width: 100%
+
+.align-columns
+    display: flex
     align-items: center
     justify-content: center
     flex-direction: column
@@ -246,10 +310,24 @@ section
         font-size: 12pt
 
     li
-        @include span-columns(4)
-        @include omega(3n)
         border: 2px solid #FFFFFF
+        @include media($mobile)
+            @include span-columns(12)
+        @include media($tablet)
+            @include span-columns(6)
+            @include omega(2n)
+        @include media($desktop)
+            @include span-columns(4)
+            @include omega-reset(2n)
+            @include omega(3n)
 
+
+.white
+    .content
+        background: #F0F0F0
+    .colours-wrap
+        li
+            border: 2px solid #F0F0F0
 
 .colours-wrap.secondary
     @include media($mobile)
@@ -325,28 +403,76 @@ ul.masonry-container
             @include omega(2n)
 
 .modal
-    .dashboard
-        color: black
-        width: 100%
-        text-align: center
-        background: black
+    .btn-next, .btn-prev
         position: absolute
-        top: 0
-        padding: 25px
+        height: 100%
+        display: flex
+        justify-content: center
+        align-items: center
+        z-index: $nav-zindex
+        i
+            font-size: 18pt
+            transition: all ease-in-out 0.4s
+        &.dark-bg
+            i
+                color: rgba(255,255,255,0.7)
+            &:hover, &:active, &:focus
+                color: rgba(255,255,255,1)
+        &.light-bg
+            i
+                color: rgba($black,0.7)
+            &:hover, &:active, &:focus
+                color: rgba($black,1)
+
+
+    .btn-next
+        right: 0
+    .btn-prev
+        left: 0
+    .download
+        position: absolute
+        bottom: 30px
+        &.light-bg
+            a
+                &:link, &:visited
+                    color: $consumer-blue
+                &:hover, &:active, &:focus
+                    color: $black
+                    &:before
+                        color: $black
+                &:before
+                    color: $consumer-blue
+
+        &.dark-bg
+            a
+                &:link, &:visited
+                    color: white
+                &:hover, &:active, &:focus
+                    color: $orange
+                    &:before
+                        color: $orange
+                &:before
+                    color: white
         a
             &:link, &:visited
-                font-size: 10pt
+                font-size: 9pt
                 display: inline-block
-                color: #FFFFFF
-                font-family: $markotreg
+                font-family: $markotbold
                 text-transform: uppercase
-
+                transition: all ease-in-out 0.3s
+                text-align: center
+            &:hover,&:active, &:focus
+                color: $orange
+                &:before
+                    color: $orange
             &:before
                 content: "\f0ed"
                 font-family: fontAwesome
-                display: inline-block
-                color: #FFFFFF
-                margin: 0 20px 0 0
+                display: block
+                font-size: 32pt
+                margin-bottom: 10px
+                transition: all ease-in-out 0.3s
+
 
     .colour-name
         color: #FFFFFF
@@ -354,3 +480,163 @@ ul.masonry-container
         font-size: 10pt
         margin: 0
         padding: 0
+        font-family: $markotbold
+        position: absolute
+        top: 25px
+        left: 25px
+        z-index: $top
+        span
+            font-family: $markotreg
+        &.light-bg
+            color: rgba($black,1)
+            span
+                color: rgba($black,0.7)
+        &.dark-bg
+            color: rgba(255,255,255,1)
+            span
+                color: rgba(255,255,255,0.7)
+
+
+.shift
+    @include shift(2)
+
+.full-height
+    height: 100vh
+
+.caption
+    position: absolute
+    bottom: 0
+    width: 100%
+    text-align: center
+
+
+.vert-sep
+    margin: 15px 0 15px 0
+    padding: 15px 0 15px 0
+    border-bottom: 1px solid rgba($light-silver, 0.4)
+    &:last-child
+        border-bottom: 0
+    &:first-child
+        margin:  0 0 15px 0
+
+
+.businesscards
+    padding: 0
+    margin: 0
+    @include outer-container()
+
+    .moda-trigger
+        display: flex
+        justify-content: center
+        align-items: center
+        position: relative
+        overflow: hidden
+    li
+        position: relative
+        overflow: hidden
+        border: 1px solid rgba(black,0.1)
+        transition: all ease-in-out 0.4s
+        margin: 0 0 3.19164% 0
+
+        a
+            &::after
+                background: rgba(0,0,0,0.7)
+                content: "View Example"
+                color: #FFFFFF
+                text-transform: uppercase
+                letter-spacing: 0.2em
+                font-size: 7pt
+                position: absolute
+                top: 0
+                left: 0
+                width: 100%
+                height: 100%
+                display: inline-flex
+                justify-content: center
+                align-items: center
+                opacity: 0
+                transition: all ease-in-out 0.4s
+        &:hover, &:active, &:focus
+            a
+                &::after
+                    opacity: 1
+        img
+            float: left
+        @include media($mobile)
+            @include span-columns(6)
+            @include omega(2n)
+        @include media($tablet)
+            @include span-columns(4)
+            @include omega-reset(2n)
+            @include omega(3n)
+        @include media($desktop)
+            @include span-columns(2.4)
+            @include omega-reset(2n)
+            @include omega-reset(3n)
+            @include omega(5n)
+        .btn-modal
+            background: $black
+            transition: all ease-in-out 0.4s
+            box-sizing: none
+            border: 1px solid transparent
+            position: absolute
+            top: 5px
+            right: 5px
+            white-space: nowrap
+            padding: 0
+            margin: 0
+            display: flex
+            justify-content: center
+            align-items: center
+            cursor: pointer
+
+
+
+.bc-container
+    @include media($mobile)
+        width: 85%
+    @include media($tablet)
+        width: 90%
+        max-width: 1200px
+    @include media($desktop)
+        width: 90%
+        max-width: 1200px
+
+
+a.m-close
+    position: absolute
+    right: 25px
+    top: 25px
+    z-index: $top
+    &.dark-bg
+        &:link, &:visited
+            color: rgba(255,255,255,0.7)
+        &:hover, &:active, &:focus
+            color: rgba(255,255,255,1)
+    &.light-bg
+        &:link, &:visited
+            color: rgba($black, 0.7)
+        &:hover, &:active, &:focus
+            color: rgba($black, 1)
+
+
+
+.modal-open
+    .cd-header
+        z-index: $top
+
+.white-layer
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    background: white
+    transition: all ease-in-out 0s
+    transition-delay: 0.3s
+    opacity: 1
+    z-index: 2
+
+.transparent
+    opacity: 0 !important
+    width: 0 !important

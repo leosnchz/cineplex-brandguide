@@ -52,14 +52,47 @@
 // Footer
 footer
     background: $black
-    padding: 50px 0
     color: white
     .container
         display: flex
-    ul.col-4
-        border-right: 1px solid rgba(255,255,255,0.2)
-        &:last-child
+    @include media($mobile)
+        padding: 20px 0
+        ul.col-4
             border-right: 0
+            @include span-columns(12)
+        .container
+            flex-direction: column
+            align-items: center
+            justify-content: center
+        li
+            @include span-columns(12)
+            text-transform: center
+        .logo
+            width: 100%
+            margin: 0 auto
+            text-align: center
+            img
+                width: 50%
+    @include media($tablet)
+        padding: 50px 0
+        ul.col-4
+            border-right: 1px solid rgba(255,255,255,0.2)
+            &:last-child
+                border-right: 0
+        .container
+            flex-direction: row
+            justify-content: flex-start
+            align-items: flex-start
+
+        @include media($desktop)
+            ul.col-4
+                border-right: 1px solid rgba(255,255,255,0.2)
+                &:last-child
+                    border-right: 0
+            .container
+                flex-direction: row
+
+
 
 .alert
     text-align: left
@@ -90,10 +123,9 @@ footer
 .alert-1
     text-align: left
     color: $black
-    padding: 25px 0
-    border-bottom: 1px dashed $light-silver
+    padding: 15px 0
     p
-        margin-bottom: 0
+        margin: 0
     &.do, &.dont, &.consider
         background: transparent
     .container
@@ -113,6 +145,9 @@ footer
     &.consider
         i.fa
             color: $gold
+    h4
+        padding: 0
+
 
 .white
     background: #FFFFFF
@@ -125,7 +160,8 @@ footer
 
 .consumer-blue
     background: $consumer-blue
-
+    .caption
+        color: #FFFFFF
 
 .corporate-blue
     background: $corporate-blue
@@ -194,12 +230,10 @@ footer
 
 
 .xscape
-    background: url('../img/xscape-bg.jpg')
-    background-position: center
+    background: url('../img/xscape-bg-1.jpg')
+    background-position: center top
     background-size: cover
     background-attachment: fixed
-
-
 
 
 .hidden
@@ -223,10 +257,6 @@ footer
     @include media($desktop)
         display: block
 
-footer
-
-    .logo
-        width: 200px
 
 
 .easyzoom
@@ -240,7 +270,7 @@ footer
         border-right: 5px solid $black
         border-bottom: 5px solid $black
         border-left: 5px solid $black
-        .caption
+        .ba-caption
             background: $black
             &::before
                 content: "\f010"
@@ -248,7 +278,7 @@ footer
                 content: "Roll out of image to zoom out"
 
 
-    .caption
+    .ba-caption
         position: absolute
         top: 0
         margin: 0 auto
@@ -283,3 +313,18 @@ footer
 .logo-spacing
     img
         border: 15px solid white
+
+.dsr
+    background: url("../img/digital-screen-rotator.jpg")
+    background-position: top center
+    background-attachment: fixed
+    background-repeat: no-repeat
+
+
+.fadein
+    opacity: 0
+    transition: all ease-in-out 0.5s
+    transition-delay: 0.5s
+
+.in-view
+    opacity: 1 !important

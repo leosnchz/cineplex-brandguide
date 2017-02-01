@@ -161,22 +161,39 @@ jQuery(document).ready(function($){
 
 // modals
 $(function() {
-  $("#modal-white").on("change", function() {
+    $("input[id^='modal-']").on("change", function() {
     if ($(this).is(":checked")) {
       $("body").addClass("modal-open");
     } else {
       $("body").removeClass("modal-open");
     }
-  });
+    });
 
-  $(".modal-fade-screen, .modal-close").on("click", function() {
-    $(".modal-state:checked").prop("checked", false).change();
-  });
+    $(".modal-trigger").on("click", function(){
+        $(".cd-header, .busem").addClass("transparent");
+        $(".white-layer").removeClass("transparent");
+        $("footer").addClass("transparent");
+    });
 
-  $(".modal-inner").on("click", function(e) {
-    e.stopPropagation();
-  });
+    $(".m-close").on("click", function(){
+        $(".cd-header, .busem").removeClass("transparent");
+        $(".white-layer").addClass("transparent");
+        $("footer").removeClass("transparent");
+        $(".modal-state:checked").prop("checked", false).change();
+      });
+
+    $(".modal-fade-screen").on("click", function() {
+      $(".modal-state:checked").prop("checked", false).change();
+    });
+
+    $(".modal-inner, .aligner").on("click", function(e) {
+        e.stopPropagation();
+    });
+
+
+
 });
+
 
 
 //scroll
@@ -340,3 +357,62 @@ $(window).scroll(function(){
          .end().filter("[href=#"+id+"]").parent().addClass("active");
    }
 });
+
+jQuery(document).ready(function($){
+	// browser window scroll (in pixels) after which the "back to top" link is shown
+	var offset = 300,
+		//browser window scroll (in pixels) after which the "back to top" link opacity is reduced
+		offset_opacity = 1200,
+		//duration of the top scrolling animation (in ms)
+		scroll_top_duration = 700,
+		//grab the "back to top" link
+		$back_to_top = $('.cd-top');
+
+	//hide or show the "back to top" link
+	$(window).scroll(function(){
+		( $(this).scrollTop() > offset ) ? $back_to_top.addClass('cd-is-visible') : $back_to_top.removeClass('cd-is-visible cd-fade-out');
+		if( $(this).scrollTop() > offset_opacity ) {
+			$back_to_top.addClass('cd-fade-out');
+		}
+	});
+
+	//smooth scroll to top
+	$back_to_top.on('click', function(event){
+		event.preventDefault();
+		$('body,html').animate({
+			scrollTop: 0 ,
+		 	}, scroll_top_duration
+		);
+	});
+
+});
+
+
+var $animation_elements = $('.fadein');
+var $window = $(window);
+
+function check_if_in_view() {
+  var window_height = $window.height();
+  var window_top_position = $window.scrollTop();
+  var window_bottom_position = (window_top_position + window_height);
+
+  $.each($animation_elements, function() {
+    var $element = $(this);
+    var element_height = $element.outerHeight();
+    var element_top_position = $element.offset().top;
+    var element_bottom_position = (element_top_position + element_height);
+
+    //check to see if this current container is within viewport
+    if ((element_bottom_position >= window_top_position) &&
+      (element_top_position <= window_bottom_position - 8)) {
+      $element.addClass('in-view');
+    } else {
+      $element.removeClass('in-view');
+    }
+  });
+}
+
+
+
+$window.on('scroll resize', check_if_in_view);
+$window.trigger('scroll');

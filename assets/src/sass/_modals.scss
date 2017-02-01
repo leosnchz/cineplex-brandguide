@@ -16,6 +16,8 @@
   $modal-image-height: 135px;
   $modal-image-width: $modal-image-height;
   $modal-trigger-image-width: 300px;
+  z-index: $top;
+  position: relative;
 
   label {
     cursor: pointer;
@@ -39,11 +41,11 @@
   .modal-fade-screen { // overlay
     @include position(fixed, 0);
     opacity: 0;
-    padding-top: 0.6em;
+    // padding-top: 0.6em;
     text-align: left;
     transition: opacity 0.25s ease;
     visibility: hidden;
-    z-index: 999;
+    z-index: $top;
 
     .modal-bg {
       @include position(absolute, 0);
@@ -147,6 +149,10 @@
 
 .modal-open {
   overflow: hidden;
+
+  .cd-main-content {
+    z-index: $top;
+  }
 }
 
 .colour-logo-container {
